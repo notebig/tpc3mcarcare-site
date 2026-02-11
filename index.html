@@ -10,27 +10,8 @@
 </head>
 
 <body>
-<header>
-  <nav>
-    <ul>
-      <li>
-        <a href="./index.html">หน้าแรก</a>
-      </li>
 
-      <li>
-        <a href="./services/window-film/index.html">ฟิล์มกรองแสง</a>
-      </li>
-
-      <li>
-        <a href="./services/ceramic-coating/index.html">เคลือบเซรามิก</a>
-      </li>
-
-      <li>
-        <a href="./contact.html">ติดต่อ</a>
-      </li>
-    </ul>
-  </nav>
-</header>
+<div id="header"></div>
 
 <main>
 
@@ -112,6 +93,12 @@
   </section>
 
 </main>
+<div id="footer"></div>
+<script src="./assets/js/include.js"></script>
+<script>
+  includeHTML('#header', './partials/header-root.html');
+  includeHTML('#footer', './partials/footer-root.html');
+</script>
 
 </body>
 </html>
