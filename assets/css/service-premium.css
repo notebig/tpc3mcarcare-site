@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111;
+  line-height: 1.7;
+}
+
+.hero {
+  height: 100vh;
+  background: url('../../assets/images/hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 6vw, 60px);
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: clamp(18px, 2vw, 22px);
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.section {
+  padding: 80px 20px;
+}
+
+.section.alt {
+  background: #f7f7f7;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.container.narrow {
+  max-width: 700px;
+}
+
+.split {
+  display: flex;
+  flex-direction: column;
+}
+
+.split img {
+  width: 100%;
+  height: auto;
+}
+
+@media(min-width: 900px) {
+  .split {
+    flex-direction: row;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .split-image,
+  .split-content {
+    flex: 1;
+  }
+}
+
+.spec-grid {
+  display: grid;
+  gap: 30px;
+}
+
+@media(min-width: 768px) {
+  .spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.final-cta {
+  text-align: center;
+}
