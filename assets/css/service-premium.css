@@ -12,7 +12,6 @@ body {
   -webkit-font-smoothing: antialiased;
   padding-top: 80px; /* กัน header fixed ทับ */
 }
-
 /* ================= HEADER ================= */
 
 header {
@@ -21,21 +20,16 @@ header {
   left: 0;
   width: 100%;
   z-index: 999;
-  transition: transform 0.32s ease-in-out, background 0.4s ease;
+  transition: transform 0.3s ease, background 0.4s ease;
 }
 
-/* hide on scroll down */
-header.hide {
-  transform: translateY(-110%);
-}
-
-/* transparent (on hero) */
+/* transparent (บน hero) */
 header.transparent {
   background: transparent;
   color: #fff;
 }
 
-/* solid background when scrolled */
+/* solid after scroll */
 header.scrolled-bg {
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
@@ -43,23 +37,41 @@ header.scrolled-bg {
   color: #111;
 }
 
-/* nav layout */
-header nav {
+/* hide when scroll down */
+header.hide {
+  transform: translateY(-110%);
+}
+
+/* NAV LAYOUT */
+.nav-container {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header nav a {
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-links a {
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
   color: inherit;
   transition: color 0.3s ease;
 }
+
 
 /* ================= BREADCRUMB ================= */
 
