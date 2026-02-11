@@ -6,6 +6,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description" content="ติดต่อ 3M Car Care The Pro’s Choice สอบถามข้อมูลฟิล์มกรองแสง เคลือบเซรามิก และนัดหมายบริการ โดยทีมงานที่ให้คำแนะนำจากการใช้งานจริง">
+<!-- LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  "@id": "https://tpc3mcarcare.com/#business",
+  "name": "3M Car Care The Pro’s Choice",
+  "url": "https://tpc3mcarcare.com/",
+  "telephone": "+66-895294226",
+  "priceRange": "$$",
+  "image": "https://tpc3mcarcare.com/assets/images/store-front.jpg",
+
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ถนนราชพฤกษ์",
+    "addressLocality": "กรุงเทพมหานคร",
+    "addressRegion": "Bangkok",
+    "postalCode": "10170",
+    "addressCountry": "TH"
+  },
+
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 13.762561718273528,
+    "longitude": 100.44594226978631
+  },
+
+  "hasMap": "https://maps.google.com/?q=13.762561718273528,100.44594226978631",
+
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "19:00"
+    }
+  ],
+
+  "areaServed": {
+    "@type": "City",
+    "name": "Bangkok"
+  },
+
+  "serviceArea": {
+    "@type": "AdministrativeArea",
+    "name": "Bangkok Metropolitan Region"
+  },
+
+  "sameAs": [
+    "https://www.facebook.com/3mtheproschoice",
+    "https://maps.google.com/?q=13.762561718273528,100.44594226978631"
+  ],
+
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Window Film Installation"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Ceramic Coating"
+      }
+    }
+  ]
+}
+</script>
 
 </head>
 
@@ -56,17 +134,17 @@
     <h2>ไปยังหน้าบริการ</h2>
     <ul>
       <li>
-        <a href="./window-film/index.html">
+        <a href="./services/window-film/index.html">
           ฟิล์มกรองแสงรถยนต์
         </a>
       </li>
       <li>
-        <a href="./window-film/faq.html">
+        <a href="./services/window-film/faq.html">
           คำถามที่พบบ่อยเกี่ยวกับฟิล์มกรองแสง
         </a>
       </li>
       <li>
-        <a href="./ceramic-coating/index.html">
+        <a href="./services/ceramic-coating/index.html">
           เคลือบเซรามิก
         </a>
       </li>
@@ -86,5 +164,7 @@
   includeHTML('#header', './partials/header-root.html');
   includeHTML('#footer', './partials/footer-root.html');
 </script>
+<script src="./assets/js/breadcrumb.js"></script>
+
 </body>
 </html>

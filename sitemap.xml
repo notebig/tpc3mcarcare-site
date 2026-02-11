@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://tpc3mcarcare.com/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://tpc3mcarcare.com/contact.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Window Film Main -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/window-film/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Window Film FAQ -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/window-film/faq.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 3M Ceramic Ultra Clear -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/window-film/3m-ceramic-ultra-clear.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 3M Crystalline -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/window-film/3m-crystalline.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Defender Nano Ceramic -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/window-film/defender-nano-ceramic.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Ceramic Coating -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/ceramic-coating/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
