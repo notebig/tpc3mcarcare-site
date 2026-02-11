@@ -1,3 +1,9 @@
+/* ================= BASE ================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -6,15 +12,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
-  background-image: url('../images/hero.webp');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100svh; /* เต็มจอมือถือจริง */
+  min-height: 650px;
+  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,38 +27,75 @@ body {
   color: #fff;
 }
 
-
-@keyframes heroZoom {
-  from { background-size: 110%; }
-  to { background-size: 118%; }
-}
-
-
+/* Background (GPU animation) */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.55));
+  background-image: url('../images/hero.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  animation: heroScale 18s ease-in-out infinite alternate;
+  transform: scale(1);
+  will-change: transform;
+  z-index: 0;
 }
 
+/* Overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.75)
+  );
+  z-index: 1;
+}
+
+/* Smooth Zoom */
+@keyframes heroScale {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+/* Hero Content */
 .hero-overlay {
   position: relative;
   z-index: 2;
   max-width: 760px;
   padding: 20px;
+  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero h1 {
   font-size: clamp(36px, 6vw, 64px);
   margin-bottom: 24px;
+  letter-spacing: -0.5px;
 }
 
 .hero p {
   font-size: clamp(18px, 2vw, 22px);
+  opacity: 0.95;
+  color: #fff; /* แก้ปัญหาสีจม */
 }
 
+/* ================= SECTIONS ================= */
+
 .section {
-  padding: 100px 20px;
+  padding: 110px 20px;
 }
 
 .section.alt {
@@ -72,25 +114,38 @@ body {
 h2 {
   font-size: clamp(26px, 3vw, 38px);
   margin-bottom: 28px;
+  letter-spacing: -0.3px;
 }
+
+/* จำกัด p ไม่ให้กระทบ hero */
+.section p {
+  font-size: 18px;
+  margin-bottom: 18px;
+  color: #333;
+}
+
+/* ================= SPLIT ================= */
 
 .split {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 50px;
 }
 
 .split img {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 @media(min-width: 900px) {
   .split {
     flex-direction: row;
     gap: 80px;
+    align-items: center;
   }
 }
+
+/* ================= SPEC GRID ================= */
 
 .spec-grid {
   display: grid;
@@ -104,6 +159,21 @@ h2 {
   }
 }
 
+.spec-grid strong {
+  font-size: 15px;
+  color: #666;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.spec-grid span {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ================= BUTTON ================= */
+
 .btn-primary {
   display: inline-block;
   margin-top: 40px;
@@ -112,7 +182,8 @@ h2 {
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
-  transition: 0.3s;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -120,15 +191,19 @@ h2 {
   transform: translateY(-2px);
 }
 
+/* ================= CTA ================= */
+
 .final-cta {
   text-align: center;
-  padding: 120px 20px;
+  padding: 130px 20px;
 }
+
+/* ================= SCROLL REVEAL ================= */
 
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.9s cubic-bezier(.25,.8,.25,1);
+  transition: all 1s cubic-bezier(.25,.8,.25,1);
 }
 
 .reveal.active {
@@ -136,6 +211,10 @@ h2 {
   transform: translateY(0);
 }
 
-html {
-  scroll-behavior: smooth;
+/* ================= MOBILE ================= */
+
+@media(max-width: 600px) {
+  .section {
+    padding: 90px 20px;
+  }
 }
