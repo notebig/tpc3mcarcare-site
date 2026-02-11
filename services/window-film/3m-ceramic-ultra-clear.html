@@ -20,6 +20,7 @@
 
   <main class="premium-page">
 
+    <!-- Breadcrumb -->
     <div id="breadcrumb"
          data-path="services/window-film"
          data-title="3M Ceramic Ultra Clear"></div>
@@ -131,17 +132,21 @@
 
   <div id="footer"></div>
 
+  <!-- Include system -->
   <script src="../../assets/js/include.js"></script>
   <script>
     includeHTML('#header', '../../partials/header-services.html');
     includeHTML('#footer', '../../partials/footer-services.html');
   </script>
 
+  <!-- Breadcrumb -->
   <script src="../../assets/js/breadcrumb.js"></script>
 
-  <!-- Reveal Script -->
+  <!-- ===== Unified Script (Reveal + Header Control) ===== -->
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
+
+    /* ========== REVEAL ========== */
     const reveals = document.querySelectorAll(".reveal");
 
     const observer = new IntersectionObserver(entries => {
@@ -153,6 +158,38 @@
     }, { threshold: 0.2 });
 
     reveals.forEach(r => observer.observe(r));
+
+
+    /* ========== HEADER CONTROL ========== */
+    const header = document.querySelector("header");
+    let lastScrollY = window.pageYOffset;
+
+    header.classList.add("transparent");
+
+    window.addEventListener("scroll", function () {
+
+      const currentScrollY = window.pageYOffset;
+
+      // Hide on scroll down
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        header.classList.add("hide");
+      } else {
+        header.classList.remove("hide");
+      }
+
+      // Add background after scroll
+      if (currentScrollY > 80) {
+        header.classList.remove("transparent");
+        header.classList.add("scrolled-bg");
+      } else {
+        header.classList.remove("scrolled-bg");
+        header.classList.add("transparent");
+      }
+
+      lastScrollY = currentScrollY;
+
+    });
+
   });
   </script>
 
@@ -172,21 +209,6 @@
     }
   }
   </script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const reveals = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  reveals.forEach(r => observer.observe(r));
-});
-</script>
 
 </body>
 </html>
