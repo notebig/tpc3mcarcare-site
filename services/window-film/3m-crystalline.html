@@ -9,7 +9,8 @@
 </head>
 
 <body>
-
+  <!-- HEADER INCLUDE -->
+  <div id="header"></div>
 <main>
 
   <!-- HERO -->
@@ -153,6 +154,14 @@
   </section>
 
 </main>
-
+ <!-- FOOTER INCLUDE -->
+  <div id="footer"></div>
+  
+  <!-- INCLUDE SCRIPT -->
+<script src="../../assets/js/include.js"></script>
+<script>
+  includeHTML('#header', '../../partials/header-services.html');
+  includeHTML('#footer', '../../partials/footer-services.html');
+</script>
 </body>
 </html>
