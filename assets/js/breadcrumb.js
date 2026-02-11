@@ -29,7 +29,7 @@ function generateBreadcrumb() {
     currentPath += "/" + seg;
 
     const name = seg
-      .replace("-", " ")
+     .replace(/-/g, " ")
       .replace(/\b\w/g, c => c.toUpperCase());
 
     const url = `${baseUrl}${currentPath}/index.html`;
