@@ -5,32 +5,63 @@
   <title>3M Ceramic Ultra Clear | ฟิล์มโทนใส</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Primary SEO -->
   <meta name="description"
         content="3M Ceramic Ultra Clear ฟิล์มโทนใส ลดความร้อนจากอินฟราเรด มองออกคมชัด ใช้งานสบาย เหมาะกับรถใช้งานประจำวัน">
 
-  <link rel="stylesheet" href="../../assets/css/service-premium.css">
+  <link rel="canonical"
+        href="https://tpc3mcarcare.com/services/window-film/3m-ceramic-ultra-clear.html">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="3M Ceramic Ultra Clear">
+  <meta property="og:description"
+        content="ฟิล์มโทนใส ลดความร้อน มองชัดสบายตา">
+  <meta property="og:url"
+        content="https://tpc3mcarcare.com/services/window-film/3m-ceramic-ultra-clear.html">
+  <meta property="og:image"
+        content="https://tpc3mcarcare.com/assets/images/ceramic-ultra-clear.webp">
+
+  <!-- Preload Hero -->
+  <link rel="preload"
+        as="image"
+        href="../../assets/images/ceramic-ultra-clear.webp">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet"
+        href="../../assets/css/service-premium.css">
 </head>
 
 <body>
 
+  <!-- Header Inject -->
   <div id="header"></div>
 
-  <main>
+  <main
+    data-service-name="3M Ceramic Ultra Clear"
+    data-service-description="ฟิล์มโทนใส ลดความร้อน มองชัดสบายตา">
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero"
+             style="--hero-bg:url('../../assets/images/ceramic-ultra-clear.webp')">
+
       <div class="hero-overlay">
         <h1>3M Ceramic Ultra Clear</h1>
         <p>ฟิล์มโทนใสที่ให้ความสบายตา และลดความร้อนที่สัมผัสได้จริง</p>
-        <a href="../../contact.html" class="btn-primary">ปรึกษา / นัดหมาย</a>
+        <a href="../../contact.html"
+           class="btn-primary">ปรึกษา / นัดหมาย</a>
       </div>
     </section>
 
     <!-- Breadcrumb -->
-    <div id="breadcrumb"
+    <nav id="breadcrumb"
+         aria-label="Breadcrumb"
          data-path="services/window-film"
-         data-title="3M Ceramic Ultra Clear"></div>
+         data-title="3M Ceramic Ultra Clear">
+    </nav>
 
+    <!-- SECTION 1 -->
     <section class="section reveal">
       <div class="container narrow">
         <h2>มองออกชัด ไม่ฟุ้ง</h2>
@@ -38,6 +69,7 @@
       </div>
     </section>
 
+    <!-- SECTION 2 -->
     <section class="section alt reveal">
       <div class="container narrow">
         <h2>ลดพลังงานความร้อนจากอินฟราเรด</h2>
@@ -45,10 +77,11 @@
       </div>
     </section>
 
+    <!-- SPLIT SECTION -->
     <section class="section reveal split">
       <div>
         <img src="../../assets/images/privacy.webp"
-             alt="ความเป็นส่วนตัวจากภายนอก">
+             alt="ตัวอย่างความเป็นส่วนตัวจากภายนอกเมื่อใช้ฟิล์ม 3M Ceramic Ultra Clear">
       </div>
       <div>
         <h2>ความเป็นส่วนตัวที่พอดี</h2>
@@ -58,34 +91,39 @@
 
   </main>
 
+  <!-- Footer Inject -->
   <div id="footer"></div>
 
-  <!-- Include -->
+
+  <!-- ================= SCRIPTS ================= -->
+
+  <!-- Core -->
   <script src="../../assets/js/include.js"></script>
-  <script>
-    includeHTML('#header', '../../partials/header-services.html');
-    includeHTML('#footer', '../../partials/footer-services.html');
-  </script>
-
-  <!-- Breadcrumb -->
-  <script src="../../assets/js/breadcrumb.js"></script>
-
-  <!-- Header + Mobile Menu (stable) -->
   <script src="../../assets/js/header.js"></script>
 
-  <!-- Reveal -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const reveals = document.querySelectorAll(".reveal");
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add("active");
-        });
-      }, { threshold: 0.2 });
-      reveals.forEach(r => observer.observe(r));
-    });
-  </script>
+  <!-- Unified Service Init (breadcrumb + reveal + schema) -->
+  <script src="../../assets/js/service-init.js"></script>
 
+
+  <!-- ================= STRUCTURED DATA ================= -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "3M Ceramic Ultra Clear",
+    "description": "ฟิล์มโทนใส ลดความร้อน มองชัดสบายตา",
+    "provider": {
+      "@type": "AutomotiveBusiness",
+      "name": "3M Car Care – The Pro’s Choice",
+      "url": "https://tpc3mcarcare.com"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Bangkok"
+    }
+  }
+  </script>
 
 </body>
 </html>

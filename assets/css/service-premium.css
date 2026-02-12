@@ -289,7 +289,7 @@ html[data-menu="open"] .mnav{ transform: translateX(0); }
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('../images/hero.webp');
+  background-image: var(--hero-bg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
