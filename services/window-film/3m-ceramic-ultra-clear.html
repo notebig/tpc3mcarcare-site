@@ -209,6 +209,72 @@
     }
   }
   </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ========== REVEAL ========== */
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  reveals.forEach(r => observer.observe(r));
+
+
+  /* ========== WAIT FOR HEADER INCLUDE ========== */
+
+  const waitForHeader = setInterval(() => {
+    const header = document.querySelector("header");
+
+    if (header) {
+
+      clearInterval(waitForHeader);
+
+      let lastScrollY = window.pageYOffset;
+      header.classList.add("transparent");
+
+      const toggle = document.getElementById("menuToggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", function () {
+  navLinks.classList.toggle("active");
+});
+
+      window.addEventListener("scroll", function () {
+
+        const currentScrollY = window.pageYOffset;
+
+        // hide when scroll down
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          header.classList.add("hide");
+        } else {
+          header.classList.remove("hide");
+        }
+
+        // background change
+        if (currentScrollY > 80) {
+          header.classList.remove("transparent");
+          header.classList.add("scrolled-bg");
+        } else {
+          header.classList.remove("scrolled-bg");
+          header.classList.add("transparent");
+        }
+
+        lastScrollY = currentScrollY;
+
+      });
+
+    }
+
+  }, 50);
+
+});
+</script>
 
 </body>
 </html>
