@@ -596,3 +596,28 @@ h2 {
     padding-bottom:72px;
   }
 }
+/* ================= PREMIUM TECH TABLE ================= */
+
+.spec-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:40px 0;
+  font-size:16px;
+}
+
+
+.spec-table th,
+.spec-table td{
+  padding:14px 10px;
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  text-align:left;
+}
+
+.spec-table th{
+  font-weight:600;
+  color:#111;
+}
+
+.spec-table td{
+  color:#333;
+}
