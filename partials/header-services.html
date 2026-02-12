@@ -1,21 +1,39 @@
-<header>
-  <nav class="nav-container">
+<header class="hdr" data-header data-theme="transparent" data-visibility="top">
+  <div class="hdr__inner">
 
-    <a href="../../index.html" class="logo">3M Car Care</a>
+    <a href="../../index.html" class="hdr__brand" aria-label="3M Car Care The Pro’s Choice">
+      <span class="hdr__brandMark">3M</span>
+      <span class="hdr__brandName">Car Care</span>
+    </a>
 
-    <div class="nav-links">
-      <a href="../window-film/index.html">ฟิล์มกรองแสง</a>
-      <a href="../ceramic-coating/index.html">เคลือบเซรามิก</a>
-      <a href="../../contact.html">ติดต่อ</a>
-    </div>
+    <nav class="hdr__nav" aria-label="Primary navigation">
+      <a class="hdr__link" href="../window-film/index.html">ฟิล์มกรองแสง</a>
+      <a class="hdr__link" href="../ceramic-coating/index.html">เคลือบเซรามิก</a>
+      <a class="hdr__link" href="../../contact.html">ติดต่อ</a>
+    </nav>
 
-    <div class="menu-toggle" id="menuToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <button class="hdr__burger" type="button"
+      aria-controls="mnav"
+      aria-expanded="false"
+      data-menu-open>
+      <span class="sr-only">Open menu</span>
+      <span class="burger" aria-hidden="true"></span>
+    </button>
 
-  </nav>
+  </div>
 </header>
 
-<div class="menu-overlay" id="menuOverlay"></div>
+<div class="overlay" data-overlay hidden></div>
+
+<aside class="mnav" id="mnav" aria-label="Mobile navigation" data-mnav hidden>
+  <div class="mnav__top">
+    <span class="mnav__title">Menu</span>
+    <button class="mnav__close" type="button" data-menu-close aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mnav__list">
+    <a class="mnav__link" href="../window-film/index.html">ฟิล์มกรองแสง</a>
+    <a class="mnav__link" href="../ceramic-coating/index.html">เคลือบเซรามิก</a>
+    <a class="mnav__link" href="../../contact.html">ติดต่อ</a>
+  </nav>
+</aside>

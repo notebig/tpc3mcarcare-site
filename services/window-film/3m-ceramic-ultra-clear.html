@@ -70,95 +70,20 @@
   <!-- Breadcrumb -->
   <script src="../../assets/js/breadcrumb.js"></script>
 
-  <!-- ===== UNIFIED JS ===== -->
+  <!-- Header + Mobile Menu (stable) -->
+  <script src="../../assets/js/header.js"></script>
+
+  <!-- Reveal -->
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-
-    /* ================= REVEAL ================= */
-    const reveals = document.querySelectorAll(".reveal");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    reveals.forEach(r => observer.observe(r));
-
-    /* ================= HEADER & MENU ================= */
-
-    function initHeader() {
-
-      const header = document.querySelector("header");
-      const toggle = document.getElementById("menuToggle");
-      const navLinks = document.querySelector(".nav-links");
-
-      if (!header || !navLinks) return false;
-
-      let lastScroll = 0;
-
-      header.classList.add("transparent");
-
-      /* ===== Mobile Toggle ===== */
-      if (toggle) {
-        toggle.addEventListener("click", function () {
-          navLinks.classList.toggle("active");
-          header.classList.remove("hide"); // กัน header หาย
+    document.addEventListener("DOMContentLoaded", function () {
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("active");
         });
-      }
-
-      navLinks.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-        });
-      });
-
-      /* ===== Scroll ===== */
-      window.addEventListener("scroll", function () {
-
-        const current = window.scrollY;
-
-        // บนสุด = โชว์เสมอ
-        if (current <= 0) {
-          header.classList.remove("hide");
-        }
-        // scroll ลง (แต่ถ้า menu เปิดอยู่ ห้ามซ่อน)
-        else if (
-          current > lastScroll &&
-          current > 100 &&
-          !navLinks.classList.contains("active")
-        ) {
-          header.classList.add("hide");
-        }
-        // scroll ขึ้น
-        else {
-          header.classList.remove("hide");
-        }
-
-        // background control
-   if (current > 80 || navLinks.classList.contains("active")) {
-  header.classList.remove("transparent");
-  header.classList.add("scrolled-bg");
-} else {
-  header.classList.remove("scrolled-bg");
-  header.classList.add("transparent");
-}
-
-        lastScroll = current;
-
-      });
-
-      return true;
-    }
-
-    /* wait for include */
-    const wait = setInterval(() => {
-      if (initHeader()) clearInterval(wait);
-    }, 50);
-
-  });
+      }, { threshold: 0.2 });
+      reveals.forEach(r => observer.observe(r));
+    });
   </script>
 
 </body>
