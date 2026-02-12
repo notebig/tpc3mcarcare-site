@@ -1,15 +1,54 @@
-<footer class="site-footer">
+<footer class="tpc-footer">
+
   <div class="footer-inner">
-    <h3>3M Car Care The Pro’s Choice</h3>
-    <p>ศูนย์ติดตั้งฟิล์มกรองแสง และเคลือบเซรามิกมาตรฐาน</p>
 
-    <p>
-      ถนนราชพฤกษ์ กรุงเทพฯ<br>
-      เปิด 8.00 – 19.00 น. (หยุดวันอังคาร)
-    </p>
+    <div class="footer-col footer-brand">
+      <h2 class="footer-logo">3M Car Care</h2>
+      <p class="footer-tagline">The Pro’s Choice</p>
 
-    <div class="footer-bottom">
-      © 2026 3M Car Care The Pro’s Choice
+      <div class="footer-contact">
+        <p>ถนนราชพฤกษ์ (ตลิ่งชัน)</p>
+        <p>เปิด 08:00–19:00 น. <span class="highlight">หยุดวันอังคาร</span></p>
+        <p>
+          โทร <a href="tel:+66895294226">089-529-4226</a><br>
+          LINE <a href="https://line.me/R/ti/p/@tpc3mcarcare" target="_blank">@tpc3mcarcare</a>
+        </p>
+      </div>
     </div>
+
+    <nav class="footer-col">
+      <h3>เมนูหลัก</h3>
+      <ul>
+        <li><a href="/">หน้าหลัก</a></li>
+        <li><a href="/pricing.html">ตารางราคา</a></li>
+        <li><a href="/booking.html">จองคิว</a></li>
+        <li><a href="/contact.html">ติดต่อเรา</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col">
+      <h3>บริการ</h3>
+      <ul>
+        <li><a href="/services/ceramic-coating/">Ceramic Coating</a></li>
+        <li><a href="/services/ppf/">Paint Protection Film</a></li>
+        <li><a href="/services/window-film/">Window Film</a></li>
+      </ul>
+    </nav>
+
   </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> 3M Car Care – The Pro’s Choice
+  </div>
+
 </footer>
+
+<div class="lux-contact-bar">
+  <a href="tel:+66895294226" class="lux-btn">โทร</a>
+  <a href="https://line.me/R/ti/p/@tpc3mcarcare" target="_blank" class="lux-btn primary">LINE</a>
+  <a href="/booking.html" class="lux-btn">จองคิว</a>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>

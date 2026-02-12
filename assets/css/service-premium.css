@@ -486,3 +486,113 @@ h2 {
 @media(max-width:600px){
   .section { padding: 90px 20px; }
 }
+
+/* ================= LUXURY FOOTER CLEAN ================= */
+
+.tpc-footer{
+  background:#0f0f0f;
+  color:#cfcfcf;
+  padding:120px 20px 40px;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  gap:80px;
+}
+
+@media(min-width:960px){
+  .footer-inner{
+    grid-template-columns:1.5fr 1fr 1fr;
+  }
+}
+
+.footer-logo{
+  font-size:28px;
+  font-weight:600;
+  color:#fff;
+}
+
+.footer-tagline{
+  font-size:14px;
+  opacity:.6;
+  margin-bottom:30px;
+}
+
+.footer-col h3{
+  font-size:14px;
+  text-transform:uppercase;
+  opacity:.7;
+  color:#fff;
+}
+
+.footer-col ul{
+  list-style:none;
+  padding:0;
+}
+
+.footer-col li{
+  margin-bottom:14px;
+}
+
+.footer-col a{
+  color:#bdbdbd;
+  text-decoration:none;
+}
+
+.footer-col a:hover{
+  color:#fff;
+}
+
+.footer-bottom{
+  margin-top:60px;
+  text-align:center;
+  font-size:13px;
+  opacity:.5;
+}
+
+.highlight{
+  color:#fff;
+  font-weight:600;
+}
+
+/* ================= LUXURY CONTACT BAR CLEAN ================= */
+
+.lux-contact-bar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:72px;
+  z-index:1500;
+  display:flex;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(16px);
+  border-top:1px solid rgba(0,0,0,.08);
+}
+
+.lux-btn{
+  flex:1;
+  text-align:center;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  padding:20px 0;
+  color:#111;
+}
+
+.lux-btn.primary{
+  font-weight:700;
+}
+
+@media(min-width:1024px){
+  .lux-contact-bar{ display:none; }
+}
+
+/* reserve space correctly */
+@media(max-width:1023px){
+  body{
+    padding-bottom:72px;
+  }
+}
