@@ -621,3 +621,135 @@ h2 {
 .spec-table td{
   color:#333;
 }
+
+
+/* ================= IMAGE SYSTEM (WINDOW FILM) ================= */
+
+/* ---- Global Safe Image ---- */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ================= HERO FIX (Override Safe Mobile) ================= */
+
+@media (max-width: 768px){
+  .hero {
+    height: 85svh;
+    min-height: 520px;
+  }
+}
+
+/* ================= WHY SPLIT IMAGE ================= */
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.split-layout .image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Tablet */
+@media (max-width: 1024px){
+  .split-layout {
+    gap: 50px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .split-layout .image img {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* ================= PRODUCT GRID IMAGE ================= */
+
+.product-grid {
+  display: grid;
+  gap: 50px;
+}
+
+@media (min-width: 768px){
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.product-card .card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.product-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Featured emphasis (subtle) */
+.product-card.featured {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px){
+  .product-card.featured {
+    transform: none;
+  }
+}
+
+/* ================= AUTHORITY IMAGE ================= */
+
+.authority-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.authority-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.authority-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px){
+  .authority-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= IMAGE HOVER (Subtle Premium) ================= */
+
+.product-card .card-image img,
+.authority-image img {
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .card-image img,
+.authority-image:hover img {
+  transform: scale(1.04);
+}
