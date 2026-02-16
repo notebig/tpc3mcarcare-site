@@ -794,76 +794,50 @@ h2 {
   font-size: 0.9rem;
   opacity: 0.7;
   margin-top: 1rem;
-}
-/* =================================================
-   MOBILE OPTIMIZATION PACK – 2026 CLEAN VERSION
-   ================================================= */
+}/* ================= MOBILE SAFE PATCH ================= */
 
 @media (max-width: 768px){
 
-  /* HERO */
-  .hero{
+  /* spacing */
+  .section {
+    padding: 70px 18px;
+  }
+
+  .final-cta {
+    padding: 100px 18px;
+  }
+
+  /* hero */
+  .hero {
     height: 75svh;
-    min-height: 480px;
+    min-height: 500px;
   }
 
-  .hero-overlay{
-    padding: 0 24px;
+  .hero h1 {
+    font-size: 30px;
   }
 
-  .hero h1{
-    font-size: 32px;
-  }
-
-  .hero p{
+  .hero p {
     font-size: 16px;
   }
 
-  /* SECTION SPACING */
-  .section{
-    padding: 70px 20px;
+  /* cinematic */
+  .cinematic-break {
+    margin: 3.5rem 0;
   }
 
-  .final-cta{
-    padding: 90px 20px;
-  }
-
-  /* CINEMATIC BREAK */
-  .cinematic-break{
-    margin: 3rem 0;
-  }
-
-  .cinematic-break img{
+  .cinematic-break img {
     aspect-ratio: 16 / 9;
   }
 
-  .cinematic-break.subtle img{
+  .cinematic-break.subtle img {
     aspect-ratio: 3 / 2;
   }
 
-  /* TABLE FIX */
-  .spec-table{
-    font-size: 14px;
-  }
-
+  /* table */
   .spec-table th,
-  .spec-table td{
-    padding: 10px 6px;
-  }
-
-  /* PRODUCT GRID */
-  .product-grid{
-    gap: 24px;
-  }
-
-  /* CONTEXT CARDS */
-  .context-card{
-    padding: 1.2rem;
-  }
-
-  /* CRAFT IMAGE */
-  .craft-image img{
-    aspect-ratio: 3 / 4;
+  .spec-table td {
+    padding: 10px 8px;
   }
 
 }
