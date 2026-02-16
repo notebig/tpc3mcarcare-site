@@ -1,3 +1,10 @@
+/* =========================================================
+   TPC 3M CAR CARE – service-premium.css
+   FINAL PRODUCTION SAFE (Refactor + De-duplicate)
+   - Keeps legacy structure
+   - Removes conflicting duplicates
+   ========================================================= */
+
 /* ================= BASE ================= */
 
 html { scroll-behavior: smooth; }
@@ -8,6 +15,13 @@ body {
   color: #111;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Global safe image */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ================= HEADER (STABLE 2026) ================= */
@@ -258,15 +272,12 @@ html[data-menu="open"] .mnav{ transform: translateX(0); }
   font-size: 14px;
   color: #777;
 }
-
 .breadcrumb a {
   text-decoration: none;
   color: #777;
   transition: 0.3s;
 }
-
 .breadcrumb a:hover { color: #111; }
-
 .breadcrumb span { margin: 0 8px; }
 
 /* ================= HERO ================= */
@@ -342,17 +353,20 @@ html[data-menu="open"] .mnav{ transform: translateX(0); }
   color: #fff;
 }
 
+/* Hero mobile override safe */
+@media (max-width: 768px){
+  .hero { height: 85svh; min-height: 520px; }
+}
+
 /* ================= SECTIONS ================= */
 
 .section { padding: 110px 20px; }
-
 .section.alt { background: #f6f6f6; }
 
 .container {
   max-width: 1100px;
   margin: auto;
 }
-
 .container.narrow { max-width: 760px; }
 
 h2 {
@@ -366,19 +380,17 @@ h2 {
   color: #333;
 }
 
-/* ================= SPLIT ================= */
+/* ================= SPLIT (legacy support) ================= */
 
 .split {
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
-
 .split img {
   width: 100%;
   border-radius: 8px;
 }
-
 @media(min-width:900px){
   .split {
     flex-direction: row;
@@ -387,27 +399,43 @@ h2 {
   }
 }
 
-/* ================= SPEC GRID ================= */
+/* New split-layout (used in some pages) */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.split-layout .image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+}
+@media (max-width: 1024px){
+  .split-layout { gap: 50px; }
+}
+@media (max-width: 768px){
+  .split-layout { grid-template-columns: 1fr; }
+  .split-layout .image img { aspect-ratio: 4 / 5; }
+}
+
+/* ================= SPEC GRID (legacy) ================= */
 
 .spec-grid {
   display: grid;
   gap: 40px;
   margin-top: 40px;
 }
-
 @media(min-width:768px){
-  .spec-grid {
-    grid-template-columns: repeat(2,1fr);
-  }
+  .spec-grid { grid-template-columns: repeat(2,1fr); }
 }
-
 .spec-grid strong {
   font-size: 15px;
   color: #666;
   display: block;
   margin-bottom: 6px;
 }
-
 .spec-grid span {
   font-size: 22px;
   font-weight: 600;
@@ -425,7 +453,6 @@ h2 {
   border-radius: 6px;
   transition: 0.3s;
 }
-
 .btn-primary:hover {
   background: #222;
   transform: translateY(-2px);
@@ -445,117 +472,72 @@ h2 {
   transform: translateY(40px);
   transition: all 1s cubic-bezier(.25,.8,.25,1);
 }
-
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ================= FOOTER ================= */
+/* ================= FOOTER (legacy + luxury) ================= */
 
+/* Legacy footer support */
 .site-footer {
   background: #111;
   color: #ccc;
   padding: 80px 20px;
   margin-top: 120px;
 }
-
-.footer-inner {
+.site-footer .footer-inner {
   max-width: 1100px;
   margin: auto;
 }
+.site-footer .footer-inner h3 { color: #fff; margin-bottom: 20px; }
+.site-footer .footer-inner p { font-size: 15px; color: #bbb; }
+.site-footer .footer-bottom { margin-top: 40px; font-size: 14px; color: #777; }
 
-.footer-inner h3 {
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-.footer-inner p {
-  font-size: 15px;
-  color: #bbb;
-}
-
-.footer-bottom {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #777;
-}
-
-/* ================= MOBILE TUNING ================= */
-
-@media(max-width:600px){
-  .section { padding: 90px 20px; }
-}
-
-/* ================= LUXURY FOOTER CLEAN ================= */
-
+/* Luxury footer */
 .tpc-footer{
   background:#0f0f0f;
   color:#cfcfcf;
   padding:120px 20px 40px;
 }
-
-.footer-inner{
+.tpc-footer .footer-inner{
   max-width:1200px;
   margin:auto;
   display:grid;
   gap:80px;
 }
-
 @media(min-width:960px){
-  .footer-inner{
+  .tpc-footer .footer-inner{
     grid-template-columns:1.5fr 1fr 1fr;
   }
 }
-
 .footer-logo{
   font-size:28px;
   font-weight:600;
   color:#fff;
 }
-
 .footer-tagline{
   font-size:14px;
   opacity:.6;
   margin-bottom:30px;
 }
-
 .footer-col h3{
   font-size:14px;
   text-transform:uppercase;
   opacity:.7;
   color:#fff;
 }
-
-.footer-col ul{
-  list-style:none;
-  padding:0;
-}
-
-.footer-col li{
-  margin-bottom:14px;
-}
-
-.footer-col a{
-  color:#bdbdbd;
-  text-decoration:none;
-}
-
-.footer-col a:hover{
-  color:#fff;
-}
-
+.footer-col ul{ list-style:none; padding:0; }
+.footer-col li{ margin-bottom:14px; }
+.footer-col a{ color:#bdbdbd; text-decoration:none; }
+.footer-col a:hover{ color:#fff; }
 .footer-bottom{
   margin-top:60px;
   text-align:center;
   font-size:13px;
   opacity:.5;
 }
-
-.highlight{
-  color:#fff;
-  font-weight:600;
-}
+.highlight{ color:#fff; font-weight:600; }
 
 /* ================= LUXURY CONTACT BAR CLEAN ================= */
 
@@ -571,7 +553,6 @@ h2 {
   backdrop-filter:blur(16px);
   border-top:1px solid rgba(0,0,0,.08);
 }
-
 .lux-btn{
   flex:1;
   text-align:center;
@@ -581,22 +562,22 @@ h2 {
   padding:20px 0;
   color:#111;
 }
-
-.lux-btn.primary{
-  font-weight:700;
-}
-
+.lux-btn.primary{ font-weight:700; }
 @media(min-width:1024px){
   .lux-contact-bar{ display:none; }
 }
-
 /* reserve space correctly */
 @media(max-width:1023px){
-  body{
-    padding-bottom:72px;
-  }
+  body{ padding-bottom:72px; }
 }
-/* ================= PREMIUM TECH TABLE ================= */
+
+/* ================= MOBILE TUNING ================= */
+
+@media(max-width:600px){
+  .section { padding: 90px 20px; }
+}
+
+/* ================= PREMIUM TECH TABLE (TABLE ONLY) ================= */
 
 .spec-table{
   width:100%;
@@ -604,91 +585,73 @@ h2 {
   margin:40px 0;
   font-size:16px;
 }
-
-
 .spec-table th,
 .spec-table td{
   padding:14px 10px;
   border-bottom:1px solid rgba(0,0,0,0.08);
   text-align:left;
 }
-
 .spec-table th{
   font-weight:600;
   color:#111;
 }
+.spec-table td{ color:#333; }
 
-.spec-table td{
-  color:#333;
+/* =========================================================
+   IMAGE SYSTEM (GLOBAL) – FINAL
+   - No duplicates
+   ========================================================= */
+
+/* Cinematic Break */
+.cinematic-break{
+  width:100%;
+  margin:5rem 0;
+  overflow:hidden;
+}
+.cinematic-break img{
+  width:100%;
+  aspect-ratio:21 / 9;
+  object-fit:cover;
+}
+.cinematic-break.subtle img{
+  aspect-ratio:2 / 1;
 }
 
-
-/* ================= IMAGE SYSTEM (WINDOW FILM) ================= */
-
-/* ---- Global Safe Image ---- */
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+/* Product images (simple pair) */
+.product-image {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
 }
-
-/* ================= HERO FIX (Override Safe Mobile) ================= */
-
-@media (max-width: 768px){
-  .hero {
-    height: 85svh;
-    min-height: 520px;
-  }
-}
-
-/* ================= WHY SPLIT IMAGE ================= */
-
-.split-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.split-layout .image img {
+.product-image img {
+  max-width: 280px;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 12px;
+  height: auto;
+  opacity: 0.95;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
 }
 
-/* Tablet */
-@media (max-width: 1024px){
-  .split-layout {
-    gap: 50px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px){
-  .split-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .split-layout .image img {
-    aspect-ratio: 4 / 5;
-  }
-}
-
-/* ================= PRODUCT GRID IMAGE ================= */
-
+/* Product grid (generic) */
 .product-grid {
   display: grid;
-  gap: 50px;
+  gap: 40px;
+  margin-top: 40px;
 }
-
 @media (min-width: 768px){
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .product-grid{
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
+.product-grid img{
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:contain;
+}
 
+/* Product cards (used in other pages) */
 .product-card .card-image {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -696,72 +659,76 @@ img {
   border-radius: 14px;
   margin-bottom: 20px;
 }
-
 .product-card .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-/* Featured emphasis (subtle) */
-.product-card.featured {
-  transform: scale(1.03);
-}
-
+.product-card.featured { transform: scale(1.03); }
 @media (max-width: 768px){
-  .product-card.featured {
-    transform: none;
-  }
+  .product-card.featured { transform: none; }
 }
 
-/* ================= AUTHORITY IMAGE ================= */
-
+/* Authority image layout (used in other pages) */
 .authority-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
 }
-
 .authority-image {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 14px;
 }
-
 .authority-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 @media (max-width: 768px){
-  .authority-layout {
-    grid-template-columns: 1fr;
-  }
+  .authority-layout { grid-template-columns: 1fr; }
 }
 
-/* ================= IMAGE HOVER (Subtle Premium) ================= */
-
+/* Hover (subtle premium) */
 .product-card .card-image img,
 .authority-image img {
   transition: transform 0.6s ease;
 }
-
 .product-card:hover .card-image img,
 .authority-image:hover img {
   transform: scale(1.04);
 }
 
+/* Craft / install image (Ceramic etc.) */
+.craft-image{
+  margin-top:3rem;
+  display:flex;
+  justify-content:center;
+}
+.craft-image img{
+  width:100%;
+  max-width:700px;
+  aspect-ratio:4 / 5;
+  object-fit:cover;
+  border-radius:12px;
+}
 
-/* ================= INTENSITY TABLE ================= */
+/* Default figure images inside sections (service log etc.) */
+.section figure img{
+  width:100%;
+  aspect-ratio:4 / 3;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* ================= INTENSITY TABLE (used in film pages) ================= */
 
 .intensity-table {
   margin-top: 2rem;
   border-top: 1px solid #e5e5e5;
 }
-
 .intensity-table .row {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr 0.8fr;
@@ -769,93 +736,41 @@ img {
   border-bottom: 1px solid #e5e5e5;
   font-size: 0.95rem;
 }
-
-.intensity-table .header {
-  font-weight: 600;
-}
-
+.intensity-table .header { font-weight: 600; }
 .intensity-section .note {
   margin-top: 1.5rem;
   font-size: 0.9rem;
   color: #666;
 }
 
-/* ================= SPEC TABLE ================= */
+/* ================= COMPARE GRID (used in some pages) ================= */
 
-.spec-table {
-  margin-top: 2rem;
-  overflow-x: auto;
-  border-top: 1px solid #ddd;
-}
-
-.spec-table .row {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  padding: 1rem 0;
-  border-bottom: 1px solid #ddd;
-  font-size: 0.92rem;
-}
-
-.spec-table .header {
-  font-weight: 600;
-}
-
-.spec-section .note {
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
-  color: #666;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-
-  .intensity-table .row {
-    grid-template-columns: 1fr 1fr;
-    row-gap: .4rem;
-  }
-
-  .intensity-table .row div:nth-child(3) {
-    grid-column: span 2;
-    font-size: .85rem;
-    color: #666;
-  }
-
-  .spec-table .row {
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
-    font-size: 0.85rem;
-  }
-
-}
 .compare-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 30px;
 }
-
 .compare-item img {
   width: 100%;
   border-radius: 6px;
 }
-
 .compare-item p {
   text-align: center;
   margin-top: 10px;
   font-size: 0.9rem;
 }
-
 @media (max-width: 768px) {
-  .compare-grid {
-    grid-template-columns: 1fr;
-  }
+  .compare-grid { grid-template-columns: 1fr; }
 }
+
+/* ================= CONTEXT CARDS ================= */
+
 .context-cards {
   display: grid;
   gap: 1.5rem;
   margin-top: 2rem;
 }
-
 .context-card {
   display: block;
   padding: 1.5rem;
@@ -865,45 +780,90 @@ img {
   color: inherit;
   transition: all .25s ease;
 }
-
 .context-card:hover {
   border-color: rgba(0,0,0,0.18);
   transform: translateY(-2px);
 }
-
 @media (min-width: 768px) {
-  .context-cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.product-image {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2.5rem;
+  .context-cards { grid-template-columns: repeat(3, 1fr); }
 }
 
-.product-image img {
-  max-width: 280px;
-  width: 100%;
-  height: auto;
-  opacity: 0.95;
-}
+/* ================= MICRO NOTE ================= */
 
 .micro-note {
   font-size: 0.9rem;
   opacity: 0.7;
   margin-top: 1rem;
 }
-.cinematic-break {
-  width: 100%;
-  margin: 5rem 0;
-  overflow: hidden;
-}
+/* =================================================
+   MOBILE OPTIMIZATION PACK – 2026 CLEAN VERSION
+   ================================================= */
 
-.cinematic-break img {
-  width: 100%;
-  height: auto;
-  display: block;
+@media (max-width: 768px){
+
+  /* HERO */
+  .hero{
+    height: 75svh;
+    min-height: 480px;
+  }
+
+  .hero-overlay{
+    padding: 0 24px;
+  }
+
+  .hero h1{
+    font-size: 32px;
+  }
+
+  .hero p{
+    font-size: 16px;
+  }
+
+  /* SECTION SPACING */
+  .section{
+    padding: 70px 20px;
+  }
+
+  .final-cta{
+    padding: 90px 20px;
+  }
+
+  /* CINEMATIC BREAK */
+  .cinematic-break{
+    margin: 3rem 0;
+  }
+
+  .cinematic-break img{
+    aspect-ratio: 16 / 9;
+  }
+
+  .cinematic-break.subtle img{
+    aspect-ratio: 3 / 2;
+  }
+
+  /* TABLE FIX */
+  .spec-table{
+    font-size: 14px;
+  }
+
+  .spec-table th,
+  .spec-table td{
+    padding: 10px 6px;
+  }
+
+  /* PRODUCT GRID */
+  .product-grid{
+    gap: 24px;
+  }
+
+  /* CONTEXT CARDS */
+  .context-card{
+    padding: 1.2rem;
+  }
+
+  /* CRAFT IMAGE */
+  .craft-image img{
+    aspect-ratio: 3 / 4;
+  }
+
 }
