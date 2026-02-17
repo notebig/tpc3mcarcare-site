@@ -1,21 +1,38 @@
 async function includeHTML(selector, file) {
   const el = document.querySelector(selector);
+  if (!el) return;
 
-  if (!el) {
-    console.warn("Include target not found:", selector);
-    return;
+  const res = await fetch(file);
+  el.innerHTML = await res.text();
+
+  // หลัง include เสร็จ → bind menu
+  initMenuSystem();
+}
+
+function initMenuSystem() {
+  const openBtn = document.querySelector('[data-menu-open]');
+  const closeBtn = document.querySelector('[data-menu-close]');
+  const overlay = document.querySelector('[data-overlay]');
+  const mnav = document.querySelector('[data-mnav]');
+  const html = document.documentElement;
+
+  if (!openBtn || !mnav) return;
+
+  function openMenu() {
+    html.setAttribute('data-menu', 'open');
+    mnav.hidden = false;
+    overlay.hidden = false;
+    openBtn.setAttribute('aria-expanded', 'true');
   }
 
-  try {
-    const res = await fetch(file);
-
-    if (!res.ok) {
-      console.error("Include failed:", file, res.status);
-      return;
-    }
-
-    el.innerHTML = await res.text();
-  } catch (err) {
-    console.error("Include error:", file, err);
+  function closeMenu() {
+    html.removeAttribute('data-menu');
+    mnav.hidden = true;
+    overlay.hidden = true;
+    openBtn.setAttribute('aria-expanded', 'false');
   }
+
+  openBtn.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+  overlay?.addEventListener('click', closeMenu);
 }
