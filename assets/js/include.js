@@ -1,38 +1,62 @@
-async function includeHTML(selector, file) {
-  const el = document.querySelector(selector);
-  if (!el) return;
+/* =====================================================
+   TPC INCLUDE SYSTEM – STABLE CLEAN VERSION
+   ===================================================== */
 
-  const res = await fetch(file);
-  el.innerHTML = await res.text();
+function includeHTML(selector, file) {
+  fetch(file)
+    .then(res => res.text())
+    .then(data => {
+      document.querySelector(selector).innerHTML = data;
 
-  // หลัง include เสร็จ → bind menu
-  initMenuSystem();
+      // หลัง inject header → init system
+      if (selector === '#header') {
+        initHeaderSystem();
+      }
+    });
 }
 
-function initMenuSystem() {
-  const openBtn = document.querySelector('[data-menu-open]');
-  const closeBtn = document.querySelector('[data-menu-close]');
-  const overlay = document.querySelector('[data-overlay]');
-  const mnav = document.querySelector('[data-mnav]');
-  const html = document.documentElement;
+function initHeaderSystem() {
 
-  if (!openBtn || !mnav) return;
+  const header = document.querySelector('.hdr');
+  const burger = document.querySelector('.hdr__burger');
+  const overlay = document.querySelector('.overlay');
+  const mnav = document.querySelector('.mnav');
+  const closeBtn = document.querySelector('.mnav__close');
 
-  function openMenu() {
-    html.setAttribute('data-menu', 'open');
-    mnav.hidden = false;
-    overlay.hidden = false;
-    openBtn.setAttribute('aria-expanded', 'true');
+  /* ===== Scroll Header ===== */
+  function updateHeader() {
+    if (window.scrollY > 60) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   }
 
-  function closeMenu() {
-    html.removeAttribute('data-menu');
-    mnav.hidden = true;
-    overlay.hidden = true;
-    openBtn.setAttribute('aria-expanded', 'false');
+  updateHeader();
+  window.addEventListener('scroll', updateHeader);
+
+  /* ===== Menu Toggle ===== */
+  if (burger) {
+    burger.addEventListener('click', () => {
+      document.documentElement.classList.add('menu-open');
+    });
   }
 
-  openBtn.addEventListener('click', openMenu);
-  closeBtn?.addEventListener('click', closeMenu);
-  overlay?.addEventListener('click', closeMenu);
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      document.documentElement.classList.remove('menu-open');
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      document.documentElement.classList.remove('menu-open');
+    });
+  }
 }
+
+/* ===== On Load ===== */
+document.addEventListener("DOMContentLoaded", function () {
+  includeHTML('#header', './partials/header-root.html');
+  includeHTML('#footer', './partials/footer-root.html');
+});

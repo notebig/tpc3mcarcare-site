@@ -7,9 +7,7 @@
   <meta name="description"
         content="ดูแลรถครบทุกขั้นตอน ตั้งแต่ล้าง ขัดลบรอย ติดฟิล์ม เคลือบเซรามิก ไปจนถึงฟิล์มใสกันรอย พร้อมมาตรฐานงานติดตั้งที่ควบคุมทุกขั้นตอน">
 
- <link rel="stylesheet" href="./assets/css/service-premium.css">
-<link rel="stylesheet" href="./assets/css/home.css">
-
+  <link rel="stylesheet" href="./assets/css/service-premium.css">
 </head>
 
 <body>
@@ -162,23 +160,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   includeHTML('#header', './partials/header-root.html');
   includeHTML('#footer', './partials/footer-root.html');
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector("[data-header]");
-  if (!header) return;
-
-  function updateHeader() {
-    if (window.scrollY > 80) {
-      header.setAttribute("data-theme", "solid");
-    } else {
-      header.setAttribute("data-theme", "transparent");
-    }
-  }
-
-  updateHeader();
-  window.addEventListener("scroll", updateHeader);
 });
 </script>
 
