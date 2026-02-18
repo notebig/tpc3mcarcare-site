@@ -1,3 +1,7 @@
+/* =====================================================
+   TPC INCLUDE SYSTEM – STABLE VERSION
+===================================================== */
+
 function includeHTML(selector, file, callback) {
   fetch(file)
     .then(res => {
@@ -7,11 +11,18 @@ function includeHTML(selector, file, callback) {
     .then(data => {
       const target = document.querySelector(selector);
       if (!target) return;
+
       target.innerHTML = data;
+
       if (callback) callback();
     })
     .catch(err => console.error(err));
 }
+
+
+/* =====================================================
+   HEADER SYSTEM
+===================================================== */
 
 function initHeaderSystem(){
 
@@ -25,20 +36,18 @@ function initHeaderSystem(){
   let lastScroll = 0;
 
   function updateHeader(){
-
     const currentScroll = window.scrollY;
 
-    // Theme
-    header.setAttribute(
-      'data-theme',
-      currentScroll > 60 ? 'solid' : 'transparent'
-    );
+    if(currentScroll > 60){
+      header.setAttribute('data-theme','solid');
+    } else {
+      header.setAttribute('data-theme','transparent');
+    }
 
-    // Visibility
     if(currentScroll > lastScroll && currentScroll > 120){
       header.setAttribute('data-visibility','hidden');
     } else {
-      header.setAttribute('data-visibility','top');
+      header.removeAttribute('data-visibility');
     }
 
     lastScroll = currentScroll;
@@ -47,7 +56,7 @@ function initHeaderSystem(){
   function openMenu(){
     document.documentElement.setAttribute('data-menu','open');
     header.setAttribute('data-theme','solid');
-    header.setAttribute('data-visibility','top');
+    header.removeAttribute('data-visibility');
   }
 
   function closeMenu(){
@@ -62,7 +71,12 @@ function initHeaderSystem(){
   window.addEventListener('scroll', updateHeader);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+window.addEventListener("load", function () {
 
   includeHTML('#header', './partials/header-root.html', function () {
     initHeaderSystem();
