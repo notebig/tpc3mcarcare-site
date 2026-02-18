@@ -1,7 +1,3 @@
-/* =====================================================
-   TPC INCLUDE SYSTEM – FINAL STABLE (SYNC WITH CSS)
-   ===================================================== */
-
 function includeHTML(selector, file, callback) {
   fetch(file)
     .then(res => {
@@ -11,25 +7,18 @@ function includeHTML(selector, file, callback) {
     .then(data => {
       const target = document.querySelector(selector);
       if (!target) return;
-
       target.innerHTML = data;
-
       if (callback) callback();
     })
     .catch(err => console.error(err));
 }
 
-
-/* =====================================================
-   HEADER SYSTEM
-   ===================================================== */
-
 function initHeaderSystem(){
 
   const header  = document.querySelector('.hdr');
-  const burger  = document.querySelector('.hdr__burger');
-  const overlay = document.querySelector('.overlay');
-  const closeBtn = document.querySelector('.mnav__close');
+  const burger  = document.querySelector('[data-menu-open]');
+  const overlay = document.querySelector('[data-overlay]');
+  const closeBtn = document.querySelector('[data-menu-close]');
 
   if(!header) return;
 
@@ -39,18 +28,17 @@ function initHeaderSystem(){
 
     const currentScroll = window.scrollY;
 
-    // Theme change
-    if(currentScroll > 60){
-      header.setAttribute('data-theme','solid');
-    } else {
-      header.setAttribute('data-theme','transparent');
-    }
+    // Theme
+    header.setAttribute(
+      'data-theme',
+      currentScroll > 60 ? 'solid' : 'transparent'
+    );
 
-    // Hide on scroll down
+    // Visibility
     if(currentScroll > lastScroll && currentScroll > 120){
       header.setAttribute('data-visibility','hidden');
     } else {
-      header.removeAttribute('data-visibility');
+      header.setAttribute('data-visibility','top');
     }
 
     lastScroll = currentScroll;
@@ -59,7 +47,7 @@ function initHeaderSystem(){
   function openMenu(){
     document.documentElement.setAttribute('data-menu','open');
     header.setAttribute('data-theme','solid');
-    header.removeAttribute('data-visibility');
+    header.setAttribute('data-visibility','top');
   }
 
   function closeMenu(){
@@ -73,11 +61,6 @@ function initHeaderSystem(){
   updateHeader();
   window.addEventListener('scroll', updateHeader);
 }
-
-
-/* =====================================================
-   INITIAL LOAD
-   ===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
