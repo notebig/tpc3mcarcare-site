@@ -1,14 +1,76 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <title>3M Car Care The Pro’s Choice | ดูแลรถครบทุกขั้นตอน</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="ดูแลรถครบทุกขั้นตอน ตั้งแต่ล้าง ขัดลบรอย ติดฟิล์ม เคลือบเซรามิก ไปจนถึงฟิล์มใสกันรอย พร้อมมาตรฐานงานติดตั้งที่ควบคุมทุกขั้นตอน">
+<meta charset="utf-8">
+<title>3M Car Care The Pro’s Choice | ล้างรถ ติดฟิล์ม เคลือบเซรามิก PPF ราชพฤกษ์</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="./assets/css/service-premium.css">
+<!-- Primary SEO -->
+<meta name="description"
+      content="ศูนย์ดูแลรถครบวงจร ราชพฤกษ์ ติดฟิล์ม 3M Ceramic & Crystalline ฟิล์มใสกันรอย PPF เคลือบเซรามิก และดูแลผิวสี โดยทีมงานมาตรฐาน 3M Car Care The Pro’s Choice">
+
+<link rel="canonical"
+      href="https://tpc3mcarcare.com/">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="th_TH">
+<meta property="og:type" content="website">
+<meta property="og:title"
+      content="3M Car Care The Pro’s Choice | ดูแลรถครบทุกขั้นตอน">
+<meta property="og:description"
+      content="ติดฟิล์ม 3M, เคลือบเซรามิก, ฟิล์มใสกันรอย PPF พร้อมมาตรฐานติดตั้งควบคุมทุกขั้นตอน ที่ราชพฤกษ์ กรุงเทพ">
+<meta property="og:url"
+      content="https://tpc3mcarcare.com/">
+<meta property="og:image"
+      content="https://tpc3mcarcare.com/assets/images/home-hero.webp">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title"
+      content="3M Car Care The Pro’s Choice | ราชพฤกษ์">
+<meta name="twitter:description"
+      content="ศูนย์ดูแลรถครบวงจร ติดฟิล์ม 3M เคลือบเซรามิก และ PPF มาตรฐานควบคุมงานทุกขั้นตอน">
+<meta name="twitter:image"
+      content="https://tpc3mcarcare.com/assets/images/home-hero.webp">
+
+<!-- Preload Hero -->
+<link rel="preload"
+      as="image"
+      href="./assets/images/home-hero.webp"
+      type="image/webp"
+      fetchpriority="high">
+
+<!-- CSS -->
+<link rel="stylesheet" href="./assets/css/home.css">
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  "@id": "https://tpc3mcarcare.com/#business",
+  "name": "3M Car Care The Pro’s Choice",
+  "image": "https://tpc3mcarcare.com/assets/images/home-hero.webp",
+  "url": "https://tpc3mcarcare.com/",
+  "telephone": "+66-895294226",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ถนนราชพฤกษ์",
+    "addressLocality": "กรุงเทพมหานคร",
+    "addressRegion": "Bangkok",
+    "postalCode": "10170",
+    "addressCountry": "TH"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bangkok"
+  }
+}
+</script>
+
 </head>
+
 
 <body>
 
@@ -33,9 +95,7 @@
         <a href="./services/index.html" class="btn-primary">
           ดูบริการทั้งหมด
         </a>
-        <a href="./contact.html" class="btn-outline">
-          ปรึกษาฟรี
-        </a>
+    
       </div>
     </div>
   </section>
@@ -154,14 +214,18 @@
 </main>
 
 <div id="footer"></div>
-
 <script src="./assets/js/include.js"></script>
+<script src="./assets/js/main.js"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  includeHTML('#header', './partials/header-root.html');
+  includeHTML('#header', './partials/header-root.html', function() {
+    initMobileMenu();   // เรียกหลัง include เสร็จ
+  });
   includeHTML('#footer', './partials/footer-root.html');
 });
 </script>
+
 
 </body>
 </html>

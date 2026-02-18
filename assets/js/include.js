@@ -1,62 +1,95 @@
 /* =====================================================
-   TPC INCLUDE SYSTEM – STABLE CLEAN VERSION
+   TPC INCLUDE SYSTEM – FINAL STABLE (SYNC WITH CSS)
    ===================================================== */
 
-function includeHTML(selector, file) {
+function includeHTML(selector, file, callback) {
   fetch(file)
-    .then(res => res.text())
+    .then(res => {
+      if (!res.ok) throw new Error('Include failed: ' + file);
+      return res.text();
+    })
     .then(data => {
-      document.querySelector(selector).innerHTML = data;
+      const target = document.querySelector(selector);
+      if (!target) return;
 
-      // หลัง inject header → init system
-      if (selector === '#header') {
-        initHeaderSystem();
-      }
-    });
+      target.innerHTML = data;
+
+      if (callback) callback();
+    })
+    .catch(err => console.error(err));
 }
+
+
+/* =====================================================
+   HEADER SYSTEM
+   ===================================================== */
 
 function initHeaderSystem() {
 
-  const header = document.querySelector('.hdr');
-  const burger = document.querySelector('.hdr__burger');
+  const header  = document.querySelector('.hdr');
+  const burger  = document.querySelector('.hdr__burger');
   const overlay = document.querySelector('.overlay');
-  const mnav = document.querySelector('.mnav');
+  const mnav    = document.querySelector('.mnav');
   const closeBtn = document.querySelector('.mnav__close');
 
-  /* ===== Scroll Header ===== */
-  function updateHeader() {
+  if (!header) return;
+
+  /* ===== Scroll Theme Control ===== */
+
+  function updateHeaderTheme() {
     if (window.scrollY > 60) {
-      header.classList.add('scrolled');
+      header.setAttribute('data-theme', 'solid');
     } else {
-      header.classList.remove('scrolled');
+      header.setAttribute('data-theme', 'transparent');
     }
   }
 
-  updateHeader();
-  window.addEventListener('scroll', updateHeader);
+  updateHeaderTheme();
+  window.addEventListener('scroll', updateHeaderTheme);
 
-  /* ===== Menu Toggle ===== */
-  if (burger) {
-    burger.addEventListener('click', () => {
-      document.documentElement.classList.add('menu-open');
-    });
+
+  /* ===== Menu Control (SYNC WITH CSS) ===== */
+
+  function openMenu() {
+    document.documentElement.setAttribute('data-menu', 'open');
+    burger?.setAttribute('aria-expanded', 'true');
+    header?.setAttribute('data-theme', 'solid');
   }
 
-  if (overlay) {
-    overlay.addEventListener('click', () => {
-      document.documentElement.classList.remove('menu-open');
-    });
+  function closeMenu() {
+    document.documentElement.removeAttribute('data-menu');
+    burger?.setAttribute('aria-expanded', 'false');
+
+    // reset theme based on scroll
+    updateHeaderTheme();
   }
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      document.documentElement.classList.remove('menu-open');
-    });
-  }
+  burger?.addEventListener('click', openMenu);
+  overlay?.addEventListener('click', closeMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+
+
+  /* ===== Close on Resize (Desktop Safety) ===== */
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 960) {
+      closeMenu();
+    }
+  });
+
 }
 
-/* ===== On Load ===== */
+
+/* =====================================================
+   INITIAL LOAD
+   ===================================================== */
+
 document.addEventListener("DOMContentLoaded", function () {
-  includeHTML('#header', './partials/header-root.html');
+
+  includeHTML('#header', './partials/header-root.html', function () {
+    initHeaderSystem();
+  });
+
   includeHTML('#footer', './partials/footer-root.html');
+
 });
