@@ -75,9 +75,23 @@ function initHeaderSystem(){
 
 document.addEventListener("DOMContentLoaded", async function(){
 
-  await includeHTML('#header', './partials/header-root.html');
-  await includeHTML('#footer', './partials/footer-root.html');
+  const path = window.location.pathname;
+  let base = './';
+
+  if (path.includes('/services/')) {
+    const segments = path.split('/').filter(Boolean);
+
+    if (segments.length >= 3) {
+      base = '../../';
+    } else {
+      base = '../';
+    }
+  }
+
+  await includeHTML('#header', base + 'partials/header-root.html');
+  await includeHTML('#footer', base + 'partials/footer-root.html');
 
   initHeaderSystem();
 
 });
+

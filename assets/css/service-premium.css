@@ -964,3 +964,146 @@ h2 {
   margin: 0 20px 25px;
   color: #555;
 }
+/* ================= SERVICE INDEX ================= */
+
+.svc-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.svc-center {
+  text-align: center;
+}
+
+.svc-hero {
+  padding: 140px 0;
+}
+
+.svc-title {
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.svc-sub {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.svc-section {
+  padding: 120px 0;
+}
+
+.svc-soft {
+  background: #f7f7f7;
+}
+
+.svc-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.svc-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.svc-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform .3s ease;
+}
+
+.svc-card:hover {
+  transform: scale(1.03);
+}
+
+.svc-card-img {
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.svc-card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.svc-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.svc-card p {
+  font-size: 16px;
+  color: #666;
+}
+
+.svc-card-wide {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.svc-system {
+  background: #fafafa;
+}
+
+.svc-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+  color: #444;
+}
+
+.svc-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.svc-btn-primary {
+  background: #111;
+  color: #fff;
+}
+
+.svc-btn-ghost {
+  border: 1px solid #111;
+  color: #111;
+  margin-left: 10px;
+}
+
+.svc-cta-section {
+  background: #111;
+  color: #fff;
+  padding: 120px 0;
+}
+
+.svc-cta-section .svc-btn-primary {
+  background: #fff;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .svc-grid-3,
+  .svc-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-title {
+    font-size: 32px;
+  }
+
+  .svc-section {
+    padding: 80px 0;
+  }
+}
