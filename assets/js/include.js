@@ -1,9 +1,9 @@
 /* =====================================================
-   TPC INCLUDE SYSTEM – STABLE VERSION
+   TPC INCLUDE SYSTEM – FINAL STABLE 2026
 ===================================================== */
 
-function includeHTML(selector, file, callback) {
-  fetch(file)
+function includeHTML(selector, file) {
+  return fetch(file)
     .then(res => {
       if (!res.ok) throw new Error('Include failed: ' + file);
       return res.text();
@@ -11,17 +11,14 @@ function includeHTML(selector, file, callback) {
     .then(data => {
       const target = document.querySelector(selector);
       if (!target) return;
-
       target.innerHTML = data;
-
-      if (callback) callback();
     })
     .catch(err => console.error(err));
 }
 
 
 /* =====================================================
-   HEADER SYSTEM
+   HEADER SYSTEM – SAFE INIT
 ===================================================== */
 
 function initHeaderSystem(){
@@ -63,9 +60,9 @@ function initHeaderSystem(){
     document.documentElement.removeAttribute('data-menu');
   }
 
-  burger?.addEventListener('click', openMenu);
-  overlay?.addEventListener('click', closeMenu);
-  closeBtn?.addEventListener('click', closeMenu);
+  if(burger)  burger.addEventListener('click', openMenu);
+  if(overlay) overlay.addEventListener('click', closeMenu);
+  if(closeBtn) closeBtn.addEventListener('click', closeMenu);
 
   updateHeader();
   window.addEventListener('scroll', updateHeader);
@@ -73,15 +70,14 @@ function initHeaderSystem(){
 
 
 /* =====================================================
-   INITIAL LOAD
+   INITIAL LOAD – PROPER SEQUENCE
 ===================================================== */
 
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", async function(){
 
-  includeHTML('#header', './partials/header-root.html', function () {
-    initHeaderSystem();
-  });
+  await includeHTML('#header', './partials/header-root.html');
+  await includeHTML('#footer', './partials/footer-root.html');
 
-  includeHTML('#footer', './partials/footer-root.html');
+  initHeaderSystem();
 
 });
