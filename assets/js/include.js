@@ -24,59 +24,54 @@ function includeHTML(selector, file, callback) {
    HEADER SYSTEM
    ===================================================== */
 
-function initHeaderSystem() {
+function initHeaderSystem(){
 
   const header  = document.querySelector('.hdr');
   const burger  = document.querySelector('.hdr__burger');
   const overlay = document.querySelector('.overlay');
-  const mnav    = document.querySelector('.mnav');
   const closeBtn = document.querySelector('.mnav__close');
 
-  if (!header) return;
+  if(!header) return;
 
-  /* ===== Scroll Theme Control ===== */
+  let lastScroll = 0;
 
-  function updateHeaderTheme() {
-    if (window.scrollY > 60) {
-      header.setAttribute('data-theme', 'solid');
+  function updateHeader(){
+
+    const currentScroll = window.scrollY;
+
+    // Theme change
+    if(currentScroll > 60){
+      header.setAttribute('data-theme','solid');
     } else {
-      header.setAttribute('data-theme', 'transparent');
+      header.setAttribute('data-theme','transparent');
     }
+
+    // Hide on scroll down
+    if(currentScroll > lastScroll && currentScroll > 120){
+      header.setAttribute('data-visibility','hidden');
+    } else {
+      header.removeAttribute('data-visibility');
+    }
+
+    lastScroll = currentScroll;
   }
 
-  updateHeaderTheme();
-  window.addEventListener('scroll', updateHeaderTheme);
-
-
-  /* ===== Menu Control (SYNC WITH CSS) ===== */
-
-  function openMenu() {
-    document.documentElement.setAttribute('data-menu', 'open');
-    burger?.setAttribute('aria-expanded', 'true');
-    header?.setAttribute('data-theme', 'solid');
+  function openMenu(){
+    document.documentElement.setAttribute('data-menu','open');
+    header.setAttribute('data-theme','solid');
+    header.removeAttribute('data-visibility');
   }
 
-  function closeMenu() {
+  function closeMenu(){
     document.documentElement.removeAttribute('data-menu');
-    burger?.setAttribute('aria-expanded', 'false');
-
-    // reset theme based on scroll
-    updateHeaderTheme();
   }
 
   burger?.addEventListener('click', openMenu);
   overlay?.addEventListener('click', closeMenu);
   closeBtn?.addEventListener('click', closeMenu);
 
-
-  /* ===== Close on Resize (Desktop Safety) ===== */
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 960) {
-      closeMenu();
-    }
-  });
-
+  updateHeader();
+  window.addEventListener('scroll', updateHeader);
 }
 
 
@@ -87,6 +82,15 @@ function initHeaderSystem() {
 document.addEventListener("DOMContentLoaded", function () {
 
   includeHTML('#header', './partials/header-root.html', function () {
+    initHeaderSystem();
+  });
+
+  includeHTML('#footer', './partials/footer-root.html');
+
+});
+window.addEventListener("load", function(){
+
+  includeHTML('#header', './partials/header-root.html', function(){
     initHeaderSystem();
   });
 
