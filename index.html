@@ -120,37 +120,43 @@
     </div>
   </div>
 </section>
-
-<!-- WORKFLOW -->
-<section class="section alt">
+<section class="section workflow-section">
   <div class="container narrow">
-    <h2>ระบบการทำงานของเรา</h2>
 
-    <div class="workflow">
+    <h2 class="workflow-title">ระบบการทำงานของเรา</h2>
 
-      <div class="workflow-item">
-        <h3>1. ตรวจสอบสภาพรถจริง</h3>
-        <p>ประเมินผิวสี กระจก และสภาพการใช้งานก่อนเลือกแนวทาง</p>
+    <div class="workflow-timeline">
+
+    <div class="workflow-step reveal">
+
+        <div class="step-number">01</div>
+        <h3>Inspection</h3>
+        <p>ตรวจสอบสภาพผิวและลักษณะการใช้งานก่อนเลือกแนวทาง</p>
       </div>
 
-      <div class="workflow-item">
-        <h3>2. เตรียมพื้นผิวให้พร้อม</h3>
-        <p>ล้าง ทำความสะอาด และปรับสภาพก่อนทุกงานปกป้อง</p>
+      <div class="workflow-step reveal">
+        <div class="step-number">02</div>
+        <h3>Preparation</h3>
+        <p>เตรียมพื้นผิวให้พร้อมก่อนทุกขั้นตอนการปกป้อง</p>
       </div>
 
-      <div class="workflow-item">
-        <h3>3. เลือกระบบปกป้องที่เหมาะสม</h3>
-        <p>Film · Ceramic · PPF ตามรูปแบบการใช้งานจริง</p>
+      <div class="workflow-step reveal">
+        <div class="step-number">03</div>
+        <h3>Protection</h3>
+        <p>เลือก Film · Ceramic · PPF ให้เหมาะกับรถแต่ละคัน</p>
       </div>
 
-      <div class="workflow-item">
-        <h3>4. ดูแลต่อเนื่องหลังติดตั้ง</h3>
-        <p>แนะนำการดูแลและตรวจสอบผลลัพธ์ตามรอบ</p>
+      <div class="workflow-step reveal">
+        <div class="step-number">04</div>
+        <h3>Aftercare</h3>
+        <p>แนะนำการดูแลและตรวจสอบผลลัพธ์อย่างต่อเนื่อง</p>
       </div>
 
     </div>
+
   </div>
 </section>
+
 <!-- CTA -->
 <section class="section final-cta">
   <div class="container narrow">
@@ -212,6 +218,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   slider.addEventListener('scroll', updateActive);
   updateActive();
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('active');
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  reveals.forEach(el => observer.observe(el));
 
 });
 </script>
