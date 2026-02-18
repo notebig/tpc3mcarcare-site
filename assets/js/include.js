@@ -88,12 +88,3 @@ document.addEventListener("DOMContentLoaded", function () {
   includeHTML('#footer', './partials/footer-root.html');
 
 });
-window.addEventListener("load", function(){
-
-  includeHTML('#header', './partials/header-root.html', function(){
-    initHeaderSystem();
-  });
-
-  includeHTML('#footer', './partials/footer-root.html');
-
-});
