@@ -973,3 +973,169 @@ h2 {
   margin: 0 20px 25px;
   color: #555;
 }
+
+
+.highlight-slider {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.highlight-card {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+}
+
+.highlight-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.slider-wrapper {
+  position: relative;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+
+.slider-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.apple-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.apple-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.apple-card {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #111;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.apple-card:hover {
+  transform: translateY(-4px);
+}
+
+.apple-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.apple-card h3 {
+  padding: 16px;
+  font-size: 1.1rem;
+}
+@media (min-width: 1024px) {
+  .apple-card {
+    flex: 0 0 40%;
+  }
+}
+.apple-slider-wrapper {
+  position: relative;
+}
+
+/* edge fade */
+.apple-slider-wrapper::before,
+.apple-slider-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.apple-slider-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.apple-slider-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+.apple-slider {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 40px 0;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.apple-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.apple-card {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #111;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  transition: transform 0.4s cubic-bezier(.22,.61,.36,1),
+              box-shadow 0.4s ease,
+              opacity 0.4s ease;
+  transform: scale(0.92);
+  opacity: 0.6;
+}
+
+.apple-card img {
+  width: 100%;
+  display: block;
+}
+
+.apple-card h3 {
+  padding: 22px;
+  font-size: 1.15rem;
+}
+
+/* active look */
+.apple-card.active {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
+}
+
+@media (min-width: 1024px) {
+  .apple-card {
+    flex: 0 0 40%;
+  }
+}
