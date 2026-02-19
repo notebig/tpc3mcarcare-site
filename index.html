@@ -8,10 +8,13 @@
 <meta name="description"
 content="3M Car Care The Pro’s Choice ราชพฤกษ์ ให้บริการฟิล์มกรองแสง 3M Ceramic, Crystalline, ฟิล์มใสกันรอย PPF ขัดเคลือบสี เคลือบเซรามิก และล้างรถ ด้วยมาตรฐานผลิตภัณฑ์ 3M และทีมงานมืออาชีพ เพื่อดูแลรถของคุณอย่างครบวงจร">
 
- 
-<link rel="stylesheet" href="/assets/css/service-premium.css">
-<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/core.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<link rel="stylesheet" href="/assets/css/pages/home.css">
+
+
 <link rel="canonical"  href="https://www.tpc3mcarcare.com">
+
 
 </head>
 
@@ -35,13 +38,15 @@ content="3M Car Care The Pro’s Choice ราชพฤกษ์ ให้บร
       ราชพฤกษ์ · ตลิ่งชัน
     </p>
 
-    <div class="hero-cta-group">
-      <a href="/services/index.html" class="btn-primary">
-        ดูบริการทั้งหมด
-      </a>
-       <a href="/contact.html" class="btn-ghost">
-        สอบถามเพิ่มเติม
-    </div>
+    <div class="hero-cta">
+  <a href="/services/index.html" class="btn-primary">
+    ดูบริการทั้งหมด
+  </a>
+  <a href="/contact.html" class="btn-ghost">
+    สอบถามเพิ่มเติม
+  </a>
+</div>
+
   </div>
 </section>
 
@@ -53,28 +58,28 @@ content="3M Car Care The Pro’s Choice ราชพฤกษ์ ให้บร
     <div class="apple-slider-wrapper">
       <div class="apple-slider">
 
-        <a href="/services/window-film/index.html" class="apple-card">
+        <a href="/services/window-film/index.html" class="card">
           <img src="/assets/images/home-film.webp" alt="">
           <div class="card-content">
             <h3>ติดฟิล์มกรองแสง 3M</h3>
           </div>
         </a>
 
-        <a href="/services/ppf/index.html" class="apple-card">
+        <a href="/services/ppf/index.html" class="card">
           <img src="/assets/images/home-ppf.webp" alt="">
           <div class="card-content">
             <h3>ฟิล์มใสกันรอย PPF</h3>
           </div>
         </a>
 
-        <a href="/services/ceramic-coating/index.html" class="apple-card">
+        <a href="/services/ceramic-coating/index.html" class="card">
           <img src="/assets/images/home-ceramic.webp" alt="">
           <div class="card-content">
             <h3>เคลือบเซรามิก</h3>
           </div>
         </a>
 
-        <a href="/services/paint-correction/index.html" class="apple-card">
+        <a href="/services/paint-correction/index.html" class="card">
           <img src="/assets/images/home-correction.webp" alt="">
           <div class="card-content">
             <h3>ขัดเคลือบสี</h3>
@@ -95,27 +100,27 @@ content="3M Car Care The Pro’s Choice ราชพฤกษ์ ให้บร
   <div class="container">
     <h2>รถของคุณกำลังเผชิญอะไรอยู่</h2>
 
-    <div class="service-grid">
+    <div class="grid-4">
 
-      <a href="/services/window-film/index.html" class="service-card">
+      <a href="/services/window-film/index.html" class="card">
         <img src="/assets/images/home-film.webp" alt="">
         <h3>ความร้อนสะสมภายในห้องโดยสาร</h3>
         <p>เลือกฟิล์มตามค่า VLT, IR Rejection และ TSER อย่างเหมาะสม</p>
       </a>
 
-      <a href="/services/ceramic-coating/index.html" class="service-card">
+      <a href="/services/ceramic-coating/index.html" class="card">
         <img src="/assets/images/home-ceramic.webp" alt="">
         <h3>ต้องการรักษาสภาพผิวสีตั้งแต่เริ่มต้น</h3>
         <p>Ceramic Protection เพื่อชะลอการเสื่อมของ Clear Coat</p>
       </a>
 
-      <a href="/services/paint-correction/index.html" class="service-card">
+      <a href="/services/paint-correction/index.html" class="card">
         <img src="/assets/images/home-correction.webp" alt="">
         <h3>ผิวสีมีรอยหรือหมองจากการใช้งาน</h3>
         <p>Surface Refinement เพื่อคืนความเรียบก่อนการปกป้อง</p>
       </a>
 
-      <a href="/services/ppf/index.html" class="service-card">
+      <a href="/services/ppf/index.html" class="card">
         <img src="/assets/images/home-ppf.webp" alt="">
         <h3>ต้องการลดความเสียหายจากแรงกระแทก</h3>
         <p>Paint Protection Film ออกแบบเพื่อดูดซับแรงก่อนถึงชั้นสี</p>
@@ -182,7 +187,7 @@ content="3M Car Care The Pro’s Choice ราชพฤกษ์ ให้บร
 document.addEventListener("DOMContentLoaded", function () {
 
   const slider = document.querySelector('.apple-slider');
-  const cards = document.querySelectorAll('.apple-card');
+  const cards = document.querySelectorAll('.card');
   const dotsContainer = document.querySelector('.slider-dots');
 
   if (!slider || !cards.length || !dotsContainer) return;
