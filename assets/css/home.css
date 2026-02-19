@@ -139,26 +139,50 @@ h2{
   font-size:clamp(16px,2vw,22px);
   opacity:.95;
 }
-
 /* =========================================================
-   BUTTON
+   BUTTON SYSTEM – QUIET PREMIUM
 ========================================================= */
 
-.btn-primary{
-  display:inline-block;
-  margin-top:40px;
-  padding:16px 36px;
-  background:#000;
-  color:#fff;
+.btn-primary,
+.btn-ghost{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px 34px;
+  border-radius:8px;
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:.3px;
   text-decoration:none;
-  border-radius:6px;
-  transition:.25s ease;
+  transition:all .25s ease;
+}
+
+/* -------- PRIMARY -------- */
+
+.btn-primary{
+  background:#111;
+  color:#fff;
+  border:1px solid #111;
 }
 
 .btn-primary:hover{
-  background:#222;
-  transform:translateY(-2px);
+  background:#1a1a1a;
+  border-color:#1a1a1a;
 }
+
+/* -------- GHOST -------- */
+
+.btn-ghost{
+  background:transparent;
+  color:#111;
+  border:1px solid rgba(0,0,0,.25);
+}
+
+.btn-ghost:hover{
+  background:rgba(0,0,0,.05);
+  border-color:rgba(0,0,0,.4);
+}
+
 
 /* =========================================================
    HIGHLIGHT (APPLE SLIDER)

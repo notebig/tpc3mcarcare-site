@@ -72,21 +72,31 @@ function initHeaderSystem(){
 /* =====================================================
    INITIAL LOAD – PROPER SEQUENCE
 ===================================================== */
-
 document.addEventListener("DOMContentLoaded", async function(){
 
-  await fetch('/tpc3mcarcare-site/partials/header-root.html')
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('header').innerHTML = data;
-    });
+  const isGithub = window.location.hostname.includes('github.io');
+  const repoName = 'tpc3mcarcare-site';
 
-  await fetch('/tpc3mcarcare-site/partials/footer-root.html')
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    });
+  const base = isGithub ? '/' + repoName : '';
 
-  initHeaderSystem();
+  async function loadPartial(id, file){
+    const el = document.getElementById(id);
+    if(!el) return;
+
+    const res = await fetch(base + '/partials/' + file);
+    if(!res.ok){
+      console.error('Failed to load:', file);
+      return;
+    }
+
+    el.innerHTML = await res.text();
+  }
+
+  await loadPartial('header', 'header.html');
+  await loadPartial('footer', 'footer.html');
+
+  if(typeof initHeaderSystem === 'function'){
+    initHeaderSystem();
+  }
 
 });
