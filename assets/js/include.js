@@ -75,23 +75,18 @@ function initHeaderSystem(){
 
 document.addEventListener("DOMContentLoaded", async function(){
 
-  const path = window.location.pathname;
-  let base = './';
+  await fetch('/tpc3mcarcare-site/partials/header-root.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
 
-  if (path.includes('/services/')) {
-    const segments = path.split('/').filter(Boolean);
-
-    if (segments.length >= 3) {
-      base = '../../';
-    } else {
-      base = '../';
-    }
-  }
-
-  await includeHTML('#header', base + 'partials/header-root.html');
-  await includeHTML('#footer', base + 'partials/footer-root.html');
+  await fetch('/tpc3mcarcare-site/partials/footer-root.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
 
   initHeaderSystem();
 
 });
-

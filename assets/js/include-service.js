@@ -1,49 +1,98 @@
-function includeHTML(selector, file, callback) {
-  fetch('../../partials/' + file)
-    .then(res => res.text())
+/* =====================================================
+   TPC INCLUDE SYSTEM – FINAL STABLE 2026
+===================================================== */
+
+function includeHTML(selector, file) {
+  return fetch(file)
+    .then(res => {
+      if (!res.ok) throw new Error('Include failed: ' + file);
+      return res.text();
+    })
     .then(data => {
-      const el = document.querySelector(selector);
-      if (!el) return;
-      el.innerHTML = data;
-      if (callback) callback();
-    });
+      const target = document.querySelector(selector);
+      if (!target) return;
+      target.innerHTML = data;
+    })
+    .catch(err => console.error(err));
 }
 
+
+/* =====================================================
+   HEADER SYSTEM – SAFE INIT
+===================================================== */
+
 function initHeaderSystem(){
+
   const header  = document.querySelector('.hdr');
-  const burger  = document.querySelector('.hdr__burger');
-  const overlay = document.querySelector('.overlay');
-  const closeBtn = document.querySelector('.mnav__close');
+  const burger  = document.querySelector('[data-menu-open]');
+  const overlay = document.querySelector('[data-overlay]');
+  const closeBtn = document.querySelector('[data-menu-close]');
 
-  if(!header || !burger) return;
+  if(!header) return;
 
-  function updateTheme(){
-    header.setAttribute('data-theme','solid');
+  let lastScroll = 0;
+
+  function updateHeader(){
+    const currentScroll = window.scrollY;
+
+    if(currentScroll > 60){
+      header.setAttribute('data-theme','solid');
+    } else {
+      header.setAttribute('data-theme','transparent');
+    }
+
+    if(currentScroll > lastScroll && currentScroll > 120){
+      header.setAttribute('data-visibility','hidden');
+    } else {
+      header.removeAttribute('data-visibility');
+    }
+
+    lastScroll = currentScroll;
   }
 
   function openMenu(){
     document.documentElement.setAttribute('data-menu','open');
-    burger.setAttribute('aria-expanded','true');
+    header.setAttribute('data-theme','solid');
+    header.removeAttribute('data-visibility');
   }
 
   function closeMenu(){
     document.documentElement.removeAttribute('data-menu');
-    burger.setAttribute('aria-expanded','false');
   }
 
-  burger.addEventListener('click', openMenu);
-  overlay?.addEventListener('click', closeMenu);
-  closeBtn?.addEventListener('click', closeMenu);
+  if(burger)  burger.addEventListener('click', openMenu);
+  if(overlay) overlay.addEventListener('click', closeMenu);
+  if(closeBtn) closeBtn.addEventListener('click', closeMenu);
 
-  updateTheme();
+  updateHeader();
+  window.addEventListener('scroll', updateHeader);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
 
-  includeHTML('#header', 'header-service.html', function () {
-    setTimeout(initHeaderSystem, 50);
-  });
+/* =====================================================
+   INITIAL LOAD – PROPER SEQUENCE
+===================================================== */
 
-  includeHTML('#footer', 'footer-root.html');
+document.addEventListener("DOMContentLoaded", async function(){
+
+  await fetch('../partials/header-services.html')
+    .then(res => {
+      if (!res.ok) throw new Error('Header not found');
+      return res.text();
+    })
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
+
+  await fetch('../partials/footer-services.html')
+    .then(res => {
+      if (!res.ok) throw new Error('Footer not found');
+      return res.text();
+    })
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
+
+  initHeaderSystem();   // 🔥 สำคัญมาก
 
 });
