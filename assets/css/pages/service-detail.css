@@ -1,0 +1,327 @@
+/* =========================================================
+   TPC 3M CAR CARE – service-detail.css
+   Shared detail page styles
+   ========================================================= */
+
+/* ---------- HERO ---------- */
+
+.hero--service {
+  position: relative;
+  min-height: 78vh;
+  display: grid;
+  place-items: center;
+  padding: 120px 24px 80px;
+  background:
+    linear-gradient(180deg, rgba(10, 16, 24, 0.42), rgba(10, 16, 24, 0.62)),
+    var(--hero-bg) center / cover no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+.hero--service .hero-overlay {
+  width: 100%;
+  max-width: 920px;
+}
+
+.eyebrow,
+.section-kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero--service .eyebrow {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.section-kicker {
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.hero--service h1 {
+  margin: 14px 0 18px;
+  font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.hero-sub {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+/* ---------- BREADCRUMB ---------- */
+
+.breadcrumb-wrap {
+  padding-top: 28px;
+  padding-bottom: 0;
+}
+
+.breadcrumb {
+  color: #777;
+}
+
+.breadcrumb a {
+  color: #777;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-text);
+}
+
+/* ---------- GENERIC SECTION ---------- */
+
+.section-alt {
+  background: var(--color-bg-soft);
+}
+
+.lead {
+  font-size: 1.03rem;
+  line-height: 1.9;
+  color: var(--color-text-soft);
+}
+
+.micro-note {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-top: 18px;
+}
+
+/* ---------- CINEMATIC BREAK ---------- */
+
+.cinematic-break {
+  width: 100%;
+  margin: 5rem 0;
+  overflow: hidden;
+}
+
+.cinematic-break img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
+
+/* ---------- TABLE ---------- */
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 36px 0 0;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.spec-table th,
+.spec-table td {
+  padding: 16px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.spec-table thead th {
+  background: rgba(15, 23, 42, 0.03);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.spec-table tbody td {
+  color: var(--color-text-soft);
+}
+
+.spec-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ---------- COMPARE GRID ---------- */
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.compare-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.compare-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-strong);
+}
+
+.compare-item img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.compare-item h3 {
+  margin: 22px 22px 10px;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.compare-item p {
+  margin: 0 22px 18px;
+  color: var(--color-text-soft);
+  line-height: 1.8;
+}
+
+.compare-item .btn-primary {
+  margin: 0 22px 24px;
+}
+
+/* ---------- CHOICE LIST ---------- */
+
+.choice-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.choice-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.choice-item h3 {
+  margin-bottom: 10px;
+  font-size: 1.12rem;
+}
+
+.choice-item p {
+  margin: 0;
+  color: var(--color-text-soft);
+  line-height: 1.85;
+}
+
+/* ---------- CRAFT IMAGE ---------- */
+
+.craft-image {
+  margin-top: 2.5rem;
+}
+
+.craft-image img {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- FINAL CTA ---------- */
+
+.final-cta {
+  background: var(--color-bg-dark);
+  color: #fff;
+  text-align: center;
+}
+
+.final-cta .section-kicker {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.final-cta h2 {
+  color: #fff;
+}
+
+.final-cta .lead {
+  max-width: 760px;
+  margin: 0 auto 22px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1100px) {
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero--service {
+    min-height: auto;
+    padding: 120px 20px 72px;
+  }
+
+  .hero-sub {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+
+  .cinematic-break {
+    margin: 3.5rem 0;
+  }
+
+  .cinematic-break img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .spec-table th,
+  .spec-table td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+
+  .choice-item {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero--service h1 {
+    font-size: 2rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .hero-cta .btn-primary,
+  .hero-cta .btn-ghost {
+    width: 100%;
+  }
+
+  .compare-item h3,
+  .compare-item p,
+  .compare-item .btn-primary {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+}
