@@ -327,3 +327,31 @@
     margin-right: 18px;
   }
 }
+
+html, body{
+  overflow-x: clip;
+}
+
+.spec-table{
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.spec-table th,
+.spec-table td{
+  white-space: normal;
+  word-break: break-word;
+}
+
+.compare-grid,
+.choice-list,
+.workflow-timeline{
+  min-width: 0;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
