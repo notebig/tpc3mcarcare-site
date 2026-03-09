@@ -1,102 +1,117 @@
 /* =====================================================
-   TPC INCLUDE SYSTEM – FINAL STABLE 2026
+   TPC INCLUDE SYSTEM – PRODUCTION SAFE UNIVERSAL
+   - Works on localhost
+   - Works on GitHub Pages
+   - Works in nested folders
+   - No hardcoded repo name
 ===================================================== */
 
-function includeHTML(selector, file) {
-  return fetch(file)
-    .then(res => {
-      if (!res.ok) throw new Error('Include failed: ' + file);
-      return res.text();
-    })
-    .then(data => {
-      const target = document.querySelector(selector);
-      if (!target) return;
-      target.innerHTML = data;
-    })
-    .catch(err => console.error(err));
+function getSiteRoot() {
+  const currentScript = document.currentScript || [...document.scripts].pop();
+  if (!currentScript) return "./";
+
+  const scriptUrl = new URL(currentScript.src, window.location.href);
+
+  // include.js expected at: /assets/js/include.js
+  // site root = everything before /assets/js/include.js
+  const marker = "/assets/js/include.js";
+  const idx = scriptUrl.pathname.lastIndexOf(marker);
+
+  if (idx === -1) {
+    return "./";
+  }
+
+  return scriptUrl.pathname.slice(0, idx + 1);
+}
+
+const SITE_ROOT = getSiteRoot();
+
+function buildPath(path) {
+  return SITE_ROOT + path.replace(/^\.?\//, "");
 }
 
 
 /* =====================================================
-   HEADER SYSTEM – SAFE INIT
+   PARTIAL LOADER
 ===================================================== */
 
-function initHeaderSystem(){
+async function loadPartial(id, file) {
+  const el = document.getElementById(id);
+  if (!el) return;
 
-  const header  = document.querySelector('.hdr');
-  const burger  = document.querySelector('[data-menu-open]');
-  const overlay = document.querySelector('[data-overlay]');
-  const closeBtn = document.querySelector('[data-menu-close]');
+  const path = buildPath("partials/" + file);
 
-  if(!header) return;
+  try {
+    const res = await fetch(path);
+    if (!res.ok) {
+      throw new Error("Include failed: " + path);
+    }
+
+    el.innerHTML = await res.text();
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+
+/* =====================================================
+   HEADER SYSTEM
+===================================================== */
+
+function initHeaderSystem() {
+  const header   = document.querySelector(".hdr");
+  const burger   = document.querySelector("[data-menu-open]");
+  const overlay  = document.querySelector("[data-overlay]");
+  const closeBtn = document.querySelector("[data-menu-close]");
+
+  if (!header) return;
 
   let lastScroll = 0;
 
-  function updateHeader(){
+  function updateHeader() {
     const currentScroll = window.scrollY;
 
-    if(currentScroll > 60){
-      header.setAttribute('data-theme','solid');
+    if (currentScroll > 60) {
+      header.setAttribute("data-theme", "solid");
     } else {
-      header.setAttribute('data-theme','transparent');
+      header.setAttribute("data-theme", "transparent");
     }
 
-    if(currentScroll > lastScroll && currentScroll > 120){
-      header.setAttribute('data-visibility','hidden');
+    if (currentScroll > lastScroll && currentScroll > 120) {
+      header.setAttribute("data-visibility", "hidden");
     } else {
-      header.removeAttribute('data-visibility');
+      header.removeAttribute("data-visibility");
     }
 
     lastScroll = currentScroll;
   }
 
-  function openMenu(){
-    document.documentElement.setAttribute('data-menu','open');
-    header.setAttribute('data-theme','solid');
-    header.removeAttribute('data-visibility');
+  function openMenu() {
+    document.documentElement.setAttribute("data-menu", "open");
+    header.setAttribute("data-theme", "solid");
+    header.removeAttribute("data-visibility");
   }
 
-  function closeMenu(){
-    document.documentElement.removeAttribute('data-menu');
+  function closeMenu() {
+    document.documentElement.removeAttribute("data-menu");
   }
 
-  if(burger)  burger.addEventListener('click', openMenu);
-  if(overlay) overlay.addEventListener('click', closeMenu);
-  if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if (burger) burger.addEventListener("click", openMenu);
+  if (overlay) overlay.addEventListener("click", closeMenu);
+  if (closeBtn) closeBtn.addEventListener("click", closeMenu);
 
   updateHeader();
-  window.addEventListener('scroll', updateHeader);
+  window.addEventListener("scroll", updateHeader, { passive: true });
 }
 
 
 /* =====================================================
-   INITIAL LOAD – PROPER SEQUENCE
+   INITIAL LOAD
 ===================================================== */
-document.addEventListener("DOMContentLoaded", async function(){
 
-  const isGithub = window.location.hostname.includes('github.io');
-  const repoName = 'tpc3mcarcare-site';
+document.addEventListener("DOMContentLoaded", async function () {
+  await loadPartial("header", "header.html");
+  await loadPartial("footer", "footer.html");
 
-  const base = isGithub ? '/' + repoName : '';
-
-  async function loadPartial(id, file){
-    const el = document.getElementById(id);
-    if(!el) return;
-
-    const res = await fetch(base + '/partials/' + file);
-    if(!res.ok){
-      console.error('Failed to load:', file);
-      return;
-    }
-
-    el.innerHTML = await res.text();
-  }
-
-  await loadPartial('header', 'header.html');
-  await loadPartial('footer', 'footer.html');
-
-  if(typeof initHeaderSystem === 'function'){
-    initHeaderSystem();
-  }
-
+  initHeaderSystem();
 });
