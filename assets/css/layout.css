@@ -1,0 +1,180 @@
+/* ================= HEADER ================= */
+
+.hdr{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:72px;
+  display:flex;
+  align-items:center;
+  z-index:1000;
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,.72);
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.hdr__inner{
+  max-width:1200px;
+  margin:auto;
+  width:100%;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.hdr__brand{
+  font-weight:600;
+  text-decoration:none;
+  color:#111;
+  display:flex;
+  gap:6px;
+}
+
+.hdr__brandMark{
+  font-weight:700;
+}
+
+.hdr__nav{
+  display:flex;
+  gap:26px;
+}
+
+.hdr__link{
+  text-decoration:none;
+  color:#111;
+  font-size:15px;
+}
+
+.hdr__link:hover{
+  opacity:.7;
+}
+
+.hdr__burger{
+  display:none;
+  font-size:24px;
+  background:none;
+  border:none;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.4);
+  opacity:0;
+  visibility:hidden;
+  transition:.25s;
+  z-index:999;
+}
+
+.overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.mnav{
+  position:fixed;
+  top:0;
+  right:-320px;
+  width:320px;
+  height:100%;
+  background:#fff;
+  padding:80px 24px;
+  transition:.3s;
+  z-index:1000;
+}
+
+.mnav.active{
+  right:0;
+}
+
+.mnav__link{
+  display:block;
+  margin-bottom:20px;
+  text-decoration:none;
+  color:#111;
+}
+
+/* ================= FOOTER ================= */
+
+.tpc-footer{
+  background:#0f1115;
+  color:#d1d5db;
+  padding:80px 20px;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+.footer-title{
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.footer-link{
+  display:block;
+  color:#cbd5e1;
+  text-decoration:none;
+  margin-bottom:6px;
+}
+
+.footer-link:hover{
+  opacity:.7;
+}
+
+.footer-bottom{
+  margin-top:50px;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:20px;
+  font-size:14px;
+  color:#9ca3af;
+}
+
+/* ================= CONTACT BAR ================= */
+
+.lux-contact-bar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#111;
+  padding:14px;
+  display:flex;
+  justify-content:center;
+  z-index:900;
+}
+
+.lux-contact-bar a{
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:900px){
+
+  .hdr__nav{
+    display:none;
+  }
+
+  .hdr__burger{
+    display:block;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+}
