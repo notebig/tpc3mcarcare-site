@@ -1,0 +1,427 @@
+/* =========================================================
+   TPC 3M CAR CARE – services.css
+   Services Hub Page
+   ========================================================= */
+
+/* ---------- HERO ---------- */
+
+.hero--servicehub {
+  position: relative;
+  min-height: 78vh;
+  display: grid;
+  place-items: center;
+  padding: 120px 24px 80px;
+  background:
+    linear-gradient(180deg, rgba(10, 16, 24, 0.42), rgba(10, 16, 24, 0.58)),
+    var(--hero-bg) center / cover no-repeat;
+  color: #fff;
+}
+
+.hero--servicehub .hero-overlay {
+  width: 100%;
+  max-width: 920px;
+  text-align: center;
+}
+
+.eyebrow,
+.section-kicker,
+.card-label,
+.service-card__eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero--servicehub h1 {
+  margin: 14px 0 18px;
+  font-size: clamp(2rem, 4.6vw, 4rem);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.hero-sub {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+/* ---------- GLOBAL SECTION ---------- */
+
+.section {
+  padding: 88px 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container.narrow {
+  max-width: 860px;
+}
+
+.section-intro {
+  background: #fff;
+  text-align: center;
+}
+
+.section-intro h2,
+.section-problem-guide h2,
+.section-services h2,
+.final-cta h2 {
+  margin: 10px 0 18px;
+  font-size: clamp(1.75rem, 3.2vw, 2.9rem);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.lead {
+  font-size: 1.03rem;
+  line-height: 1.9;
+  color: #475467;
+}
+
+.section-kicker {
+  color: #8a94a6;
+  margin-bottom: 8px;
+}
+
+/* ---------- BUTTONS / TEXT LINKS ---------- */
+
+.btn-primary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.28s ease;
+}
+
+.btn-primary {
+  background: #111827;
+  color: #fff;
+  border: 1px solid #111827;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  background: #0b1220;
+  border-color: #0b1220;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  color: #111827;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.text-link::after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+a:hover .text-link::after,
+.text-link:hover::after {
+  transform: translateX(2px);
+}
+
+/* ---------- PROBLEM GUIDE ---------- */
+
+.section-problem-guide {
+  background: #f8fafc;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.problem-card {
+  display: block;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  border-color: rgba(15, 23, 42, 0.14);
+}
+
+.problem-card .card-content {
+  height: 100%;
+}
+
+.card-label {
+  color: #8a94a6;
+  margin-bottom: 10px;
+}
+
+.problem-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.28rem;
+  line-height: 1.35;
+  color: #111827;
+}
+
+.problem-card p {
+  margin: 0;
+  color: #475467;
+  line-height: 1.8;
+}
+
+/* ---------- SERVICE GRID ---------- */
+
+.section-services {
+  background: #fff;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  margin-top: 30px;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  border-color: rgba(15, 23, 42, 0.14);
+}
+
+.service-card__media {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.service-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card__media img {
+  transform: scale(1.04);
+}
+
+.service-card__body {
+  padding: 24px 24px 26px;
+}
+
+.service-card__eyebrow {
+  color: #8a94a6;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+  line-height: 1.35;
+}
+
+.service-card h3 a {
+  color: #111827;
+  text-decoration: none;
+}
+
+.service-card p {
+  margin: 0;
+  color: #475467;
+  line-height: 1.8;
+}
+
+/* ---------- WORKFLOW ---------- */
+
+.workflow-section {
+  background: linear-gradient(180deg, #f8fafc 0%, #f3f6f9 100%);
+  text-align: center;
+}
+
+.workflow-title {
+  margin: 10px 0 0;
+  font-size: clamp(1.75rem, 3.2vw, 2.7rem);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.workflow-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 36px;
+}
+
+.workflow-step {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  padding: 28px 22px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  transform: translateY(18px);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.workflow-step.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step-number {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 16px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #111827;
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.workflow-step h3 {
+  margin: 0 0 10px;
+  font-size: 1.12rem;
+  color: #111827;
+}
+
+.workflow-step p {
+  margin: 0;
+  color: #475467;
+  line-height: 1.8;
+}
+
+/* ---------- FINAL CTA ---------- */
+
+.final-cta {
+  background: #0f172a;
+  color: #fff;
+  text-align: center;
+}
+
+.final-cta .section-kicker {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.final-cta h2 {
+  color: #fff;
+}
+
+.final-cta .lead {
+  max-width: 760px;
+  margin: 0 auto 22px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1100px) {
+  .problem-grid,
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflow-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 72px 20px;
+  }
+
+  .hero--servicehub {
+    min-height: auto;
+    padding: 120px 20px 72px;
+  }
+
+  .hero-sub {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+
+  .problem-grid,
+  .service-grid,
+  .workflow-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-card,
+  .service-card__body,
+  .workflow-step {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero--servicehub h1 {
+    font-size: 2rem;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+}
