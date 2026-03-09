@@ -1,0 +1,76 @@
+:root{
+  /* Brand */
+  --color-bg: #ffffff;
+  --color-bg-soft: #f8fafc;
+  --color-bg-dark: #0f172a;
+
+  --color-text: #111827;
+  --color-text-soft: #475467;
+  --color-text-muted: #8a94a6;
+  --color-text-invert: rgba(255,255,255,.92);
+
+  --color-border: rgba(15,23,42,.08);
+  --color-border-strong: rgba(15,23,42,.14);
+
+  --color-surface: #ffffff;
+  --color-surface-glass: rgba(255,255,255,.72);
+  --color-overlay: rgba(2,6,23,.55);
+
+  /* Header */
+  --hdr-h: 72px;
+  --hdr-bg: transparent;
+  --hdr-bd: transparent;
+  --hdr-fg: rgba(255,255,255,.92);
+  --hdr-bg-solid: rgba(255,255,255,.72);
+  --hdr-bd-solid: rgba(0,0,0,.06);
+  --hdr-fg-solid: rgba(15,23,42,.92);
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --fs-body: 16px;
+  --fs-lead: 18px;
+  --fs-sm: 14px;
+
+  --lh-body: 1.75;
+  --lh-relaxed: 1.9;
+  --lh-tight: 1.2;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Shadow */
+  --shadow-sm: 0 8px 25px rgba(0,0,0,.05);
+  --shadow-md: 0 10px 30px rgba(15,23,42,.04);
+  --shadow-lg: 0 18px 42px rgba(15,23,42,.08);
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --blur: 14px;
+  --transition-fast: 180ms var(--ease);
+  --transition-base: 280ms var(--ease);
+  --transition-slow: 500ms var(--ease);
+
+  /* Layout */
+  --container: 1100px;
+  --container-wide: 1200px;
+  --container-narrow: 760px;
+
+  /* Spacing */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 20px;
+  --space-5: 24px;
+  --space-6: 30px;
+  --space-7: 40px;
+  --space-8: 50px;
+  --space-9: 72px;
+  --space-10: 88px;
+  --space-11: 110px;
+  --space-12: 130px;
+}
