@@ -355,3 +355,9 @@ img{
   max-width: 100%;
   height: auto;
 }
+
+.container,
+.container.narrow{
+  width: 100%;
+  box-sizing: border-box;
+}
