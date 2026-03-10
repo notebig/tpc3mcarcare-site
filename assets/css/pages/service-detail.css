@@ -129,8 +129,12 @@
   border-radius: 18px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  table-layout:auto;
 }
-
+.table-scroll{
+  width:100%;
+  overflow-x:auto;
+}
 .spec-table th,
 .spec-table td {
   padding: 16px 14px;
@@ -332,12 +336,7 @@ html, body{
   overflow-x: clip;
 }
 
-.spec-table{
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
+ 
 
 .spec-table th,
 .spec-table td{
