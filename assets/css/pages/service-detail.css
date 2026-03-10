@@ -3,6 +3,24 @@
    Shared detail page styles
    ========================================================= */
 
+/* ---------- PAGE SAFETY ---------- */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container,
+.container.narrow {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* ---------- HERO ---------- */
 
 .hero--service {
@@ -104,6 +122,10 @@
   margin-top: 18px;
 }
 
+.faq-more {
+  margin-top: 28px;
+}
+
 /* ---------- CINEMATIC BREAK ---------- */
 
 .cinematic-break {
@@ -120,6 +142,12 @@
 
 /* ---------- TABLE ---------- */
 
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .spec-table {
   width: 100%;
   border-collapse: collapse;
@@ -129,17 +157,16 @@
   border-radius: 18px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  table-layout:auto;
+  table-layout: auto;
 }
-.table-scroll{
-  width:100%;
-  overflow-x:auto;
-}
+
 .spec-table th,
 .spec-table td {
   padding: 16px 14px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   text-align: left;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .spec-table thead th {
@@ -163,6 +190,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   margin-top: 30px;
+  min-width: 0;
 }
 
 .compare-item {
@@ -175,6 +203,7 @@
     transform var(--transition-base),
     box-shadow var(--transition-base),
     border-color var(--transition-base);
+  min-width: 0;
 }
 
 .compare-item:hover {
@@ -211,6 +240,7 @@
   display: grid;
   gap: 18px;
   margin-top: 30px;
+  min-width: 0;
 }
 
 .choice-item {
@@ -219,6 +249,7 @@
   border-radius: 22px;
   padding: 24px;
   box-shadow: var(--shadow-sm);
+  min-width: 0;
 }
 
 .choice-item h3 {
@@ -230,6 +261,12 @@
   margin: 0;
   color: var(--color-text-soft);
   line-height: 1.85;
+}
+
+/* ---------- WORKFLOW SAFETY ---------- */
+
+.workflow-timeline {
+  min-width: 0;
 }
 
 /* ---------- CRAFT IMAGE ---------- */
@@ -269,9 +306,7 @@
   margin: 0 auto 22px;
   color: rgba(255, 255, 255, 0.8);
 }
-.faq-more{
-  margin-top: 28px;
-}
+
 /* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 1100px) {
@@ -299,10 +334,13 @@
     aspect-ratio: 16 / 9;
   }
 
+  .spec-table {
+    font-size: 14px;
+  }
+
   .spec-table th,
   .spec-table td {
     padding: 12px 10px;
-    font-size: 14px;
   }
 
   .choice-item {
@@ -330,33 +368,4 @@
     margin-left: 18px;
     margin-right: 18px;
   }
-}
-
-html, body{
-  overflow-x: clip;
-}
-
- 
-
-.spec-table th,
-.spec-table td{
-  white-space: normal;
-  word-break: break-word;
-}
-
-.compare-grid,
-.choice-list,
-.workflow-timeline{
-  min-width: 0;
-}
-
-img{
-  max-width: 100%;
-  height: auto;
-}
-
-.container,
-.container.narrow{
-  width: 100%;
-  box-sizing: border-box;
 }
