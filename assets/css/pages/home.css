@@ -24,14 +24,16 @@
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,.75));
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.74)),
+    radial-gradient(circle at center, rgba(0,0,0,.06), rgba(0,0,0,.24));
   z-index:1;
 }
 
 .hero-overlay{
   position:relative;
   z-index:2;
-  max-width:760px;
+max-width: 880px;
   padding:20px;
 }
 
@@ -48,4 +50,148 @@
 .workflow-section{
   background:#f7f7f7;
   text-align:center;
+}
+/* =========================================
+   FEATURED SERVICES RAIL
+   Apple-style horizontal cards
+========================================= */
+
+.featured-rail{
+  overflow: hidden;
+}
+
+.featured-rail__head{
+  max-width: 760px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.featured-rail .rail{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 420px);
+  gap: 20px;
+  overflow-x: auto;
+  padding: 6px 4px 8px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.featured-rail .rail::-webkit-scrollbar{
+  display: none;
+}
+
+.rail-card{
+  position: relative;
+  min-height: 520px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #111;
+  color: #fff;
+  scroll-snap-align: start;
+  box-shadow: 0 18px 50px rgba(0,0,0,.18);
+  isolation: isolate;
+}
+
+.rail-card img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+}
+
+.rail-card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(0,0,0,.72) 8%, rgba(0,0,0,.18) 52%, rgba(0,0,0,.08) 100%);
+  z-index: 1;
+}
+
+.rail-card__body{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 520px;
+  padding: 28px;
+}
+
+.rail-card__eyebrow{
+  margin: 0 0 10px;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.74);
+}
+
+.rail-card h3{
+  margin: 0 0 10px;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  line-height: 1.18;
+  color: #fff;
+}
+
+.rail-card p{
+  margin: 0 0 14px;
+  max-width: 28ch;
+  color: rgba(255,255,255,.84);
+}
+
+.rail-card__link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rail-card__link:hover{
+  opacity: .86;
+}
+
+.rail-card__link::after{
+  content: "›";
+  line-height: 1;
+  font-size: 1rem;
+}
+
+@media (max-width: 1024px){
+  .featured-rail .rail{
+    grid-auto-columns: minmax(280px, 360px);
+  }
+
+  .rail-card,
+  .rail-card__body{
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 768px){
+  .featured-rail__head{
+    margin-bottom: 22px;
+    text-align: left;
+  }
+
+  .featured-rail .rail{
+    grid-auto-columns: 84%;
+    gap: 16px;
+    padding-inline: 2px;
+  }
+
+  .rail-card,
+  .rail-card__body{
+    min-height: 440px;
+    border-radius: 22px;
+  }
+
+  .rail-card__body{
+    padding: 22px;
+  }
 }
