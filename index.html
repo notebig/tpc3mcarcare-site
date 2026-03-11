@@ -53,7 +53,7 @@
         </div>
       </div>
     </section>
-<!-- FEATURED SERVICES RAIL -->
+<!-- FEATURED SERVICES CAROUSEL -->
 <section class="section featured-rail reveal" aria-label="บริการแนะนำ">
   <div class="container">
     <div class="featured-rail__head">
@@ -65,49 +65,69 @@
       </p>
     </div>
 
-    <div class="rail" tabindex="0">
+    <div class="featured-carousel" data-carousel>
+      <button class="featured-carousel__nav featured-carousel__nav--prev"
+              type="button"
+              aria-label="ก่อนหน้า"
+              data-carousel-prev>
+        ‹
+      </button>
 
-      <article class="rail-card">
-        <img src="./assets/images/home/rail-window-film.webp" alt="ฟิล์มกรองแสง 3M" loading="lazy">
-        <div class="rail-card__body">
-          <p class="rail-card__eyebrow">Window Film</p>
-          <h3>ฟิล์มกรองแสง 3M</h3>
-          <p>ลดความร้อนและยกระดับความสบายในการใช้งานรถทุกวัน</p>
-          <a class="rail-card__link" href="./services/window-film/index.html">ดูรายละเอียด</a>
+      <div class="featured-carousel__viewport" data-carousel-viewport>
+        <div class="featured-carousel__track" data-carousel-track>
+
+          <article class="rail-card" data-carousel-slide>
+            <img src="./assets/images/home/rail-window-film.webp" alt="ฟิล์มกรองแสง 3M" loading="lazy">
+            <div class="rail-card__body">
+              <p class="rail-card__eyebrow">Window Film</p>
+              <h3>ฟิล์มกรองแสง 3M</h3>
+              <p>ลดความร้อนและยกระดับความสบายในการใช้งานรถทุกวัน</p>
+              <a class="rail-card__link" href="./services/window-film/index.html">ดูรายละเอียด</a>
+            </div>
+          </article>
+
+          <article class="rail-card" data-carousel-slide>
+            <img src="./assets/images/home/rail-ppf.webp" alt="ฟิล์มใสกันรอย PPF" loading="lazy">
+            <div class="rail-card__body">
+              <p class="rail-card__eyebrow">Paint Protection Film</p>
+              <h3>ฟิล์มใสกันรอย PPF</h3>
+              <p>ปกป้องผิวสีจากแรงกระแทกในจุดที่มีความเสี่ยงสูง</p>
+              <a class="rail-card__link" href="./services/ppf/index.html">ดูรายละเอียด</a>
+            </div>
+          </article>
+
+          <article class="rail-card" data-carousel-slide>
+            <img src="./assets/images/home/rail-ceramic.webp" alt="3M Ceramic Coating" loading="lazy">
+            <div class="rail-card__body">
+              <p class="rail-card__eyebrow">Ceramic Coating</p>
+              <h3>3M Ceramic Coating</h3>
+              <p>ระบบดูแลผิวสีให้ล้างง่าย ดูแลง่าย และรักษาสภาพในระยะยาว</p>
+              <a class="rail-card__link" href="./services/ceramic-coating/index.html">ดูรายละเอียด</a>
+            </div>
+          </article>
+
+          <article class="rail-card" data-carousel-slide>
+            <img src="./assets/images/home/rail-correction.webp" alt="Paint Correction" loading="lazy">
+            <div class="rail-card__body">
+              <p class="rail-card__eyebrow">Surface Refinement</p>
+              <h3>Paint Correction</h3>
+              <p>ฟื้นฟูสภาพพื้นผิวก่อนเข้าสู่ระบบการปกป้องที่เหมาะสม</p>
+              <a class="rail-card__link" href="./services/paint-correction/index.html">ดูรายละเอียด</a>
+            </div>
+          </article>
+
         </div>
-      </article>
+      </div>
 
-      <article class="rail-card">
-        <img src="./assets/images/home/rail-ppf.webp" alt="ฟิล์มใสกันรอย PPF" loading="lazy">
-        <div class="rail-card__body">
-          <p class="rail-card__eyebrow">Paint Protection Film</p>
-          <h3>ฟิล์มใสกันรอย PPF</h3>
-          <p>ปกป้องผิวสีจากแรงกระแทกในจุดที่มีความเสี่ยงสูง</p>
-          <a class="rail-card__link" href="./services/ppf/index.html">ดูรายละเอียด</a>
-        </div>
-      </article>
-
-      <article class="rail-card">
-        <img src="./assets/images/home/rail-ceramic.webp" alt="3M Ceramic Coating" loading="lazy">
-        <div class="rail-card__body">
-          <p class="rail-card__eyebrow">Ceramic Coating</p>
-          <h3>3M Ceramic Coating</h3>
-          <p>ระบบดูแลผิวสีให้ล้างง่าย ดูแลง่าย และรักษาสภาพในระยะยาว</p>
-          <a class="rail-card__link" href="./services/ceramic-coating/index.html">ดูรายละเอียด</a>
-        </div>
-      </article>
-
-      <article class="rail-card">
-        <img src="./assets/images/home/rail-correction.webp" alt="Paint Correction" loading="lazy">
-        <div class="rail-card__body">
-          <p class="rail-card__eyebrow">Surface Refinement</p>
-          <h3>Paint Correction</h3>
-          <p>ฟื้นฟูสภาพพื้นผิวก่อนเข้าสู่ระบบการปกป้องที่เหมาะสม</p>
-          <a class="rail-card__link" href="./services/paint-correction/index.html">ดูรายละเอียด</a>
-        </div>
-      </article>
-
+      <button class="featured-carousel__nav featured-carousel__nav--next"
+              type="button"
+              aria-label="ถัดไป"
+              data-carousel-next>
+        ›
+      </button>
     </div>
+
+    <div class="featured-carousel__dots" data-carousel-dots aria-label="ลำดับการ์ด"></div>
   </div>
 </section>
     <!-- QUICK INFO -->
@@ -582,8 +602,82 @@
 
   <script src="./assets/js/include.js"></script>
   <script src="./assets/js/header.js"></script>
-  <script src="./assets/js/home-init.js"></script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector("[data-carousel]");
+    if (!carousel) return;
+
+    const viewport = carousel.querySelector("[data-carousel-viewport]");
+    const track = carousel.querySelector("[data-carousel-track]");
+    const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+    const prevBtn = carousel.querySelector("[data-carousel-prev]");
+    const nextBtn = carousel.querySelector("[data-carousel-next]");
+    const dotsWrap = document.querySelector("[data-carousel-dots]");
+
+    let current = 0;
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.className = "featured-carousel__dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `ไปการ์ดที่ ${index + 1}`);
+      dot.addEventListener("click", () => goTo(index));
+      dotsWrap.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsWrap.querySelectorAll(".featured-carousel__dot"));
+
+    function getStep() {
+      if (!slides.length) return 0;
+      const gap = 20;
+      return slides[0].offsetWidth + gap;
+    }
+
+    function update() {
+      const isMobile = window.innerWidth <= 768;
+
+      if (!isMobile) {
+        const step = getStep();
+        track.style.transform = `translateX(-${current * step}px)`;
+      }
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === current);
+      });
+
+      if (prevBtn) prevBtn.disabled = current === 0;
+      if (nextBtn) nextBtn.disabled = current === slides.length - 1;
+    }
+
+    function goTo(index) {
+      current = Math.max(0, Math.min(index, slides.length - 1));
+      update();
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => goTo(current - 1));
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => goTo(current + 1));
+    }
+
+    if (window.innerWidth <= 768) {
+      viewport.addEventListener("scroll", () => {
+        const step = getStep();
+        if (!step) return;
+        current = Math.round(viewport.scrollLeft / step);
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("is-active", index === current);
+        });
+      }, { passive: true });
+    }
+
+    window.addEventListener("resize", update);
+    update();
+  });
+</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

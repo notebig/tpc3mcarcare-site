@@ -51,9 +51,9 @@ max-width: 880px;
   background:#f7f7f7;
   text-align:center;
 }
+
 /* =========================================
-   FEATURED SERVICES RAIL
-   Apple-style horizontal cards
+   FEATURED SERVICES CAROUSEL
 ========================================= */
 
 .featured-rail{
@@ -66,30 +66,29 @@ max-width: 880px;
   text-align: center;
 }
 
-.featured-rail .rail{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(280px, 420px);
-  gap: 20px;
-  overflow-x: auto;
-  padding: 6px 4px 8px;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+.featured-carousel{
+  position: relative;
 }
 
-.featured-rail .rail::-webkit-scrollbar{
-  display: none;
+.featured-carousel__viewport{
+  overflow: hidden;
+}
+
+.featured-carousel__track{
+  display: flex;
+  gap: 20px;
+  transition: transform .45s cubic-bezier(.22,.61,.36,1);
+  will-change: transform;
 }
 
 .rail-card{
   position: relative;
-  min-height: 520px;
+  flex: 0 0 min(72vw, 460px);
+  min-height: 540px;
   border-radius: 28px;
   overflow: hidden;
   background: #111;
   color: #fff;
-  scroll-snap-align: start;
   box-shadow: 0 18px 50px rgba(0,0,0,.18);
   isolation: isolate;
 }
@@ -107,8 +106,7 @@ max-width: 880px;
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to top, rgba(0,0,0,.72) 8%, rgba(0,0,0,.18) 52%, rgba(0,0,0,.08) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,.72) 8%, rgba(0,0,0,.18) 52%, rgba(0,0,0,.08) 100%);
   z-index: 1;
 }
 
@@ -118,7 +116,7 @@ max-width: 880px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 520px;
+  min-height: 540px;
   padding: 28px;
 }
 
@@ -132,7 +130,7 @@ max-width: 880px;
 
 .rail-card h3{
   margin: 0 0 10px;
-  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
   line-height: 1.18;
   color: #fff;
 }
@@ -152,46 +150,111 @@ max-width: 880px;
   text-decoration: none;
 }
 
-.rail-card__link:hover{
-  opacity: .86;
-}
-
 .rail-card__link::after{
   content: "›";
   line-height: 1;
   font-size: 1rem;
 }
 
-@media (max-width: 1024px){
-  .featured-rail .rail{
-    grid-auto-columns: minmax(280px, 360px);
+.featured-carousel__nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(15,23,42,.72);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 5;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+.featured-carousel__nav:hover{
+  background: rgba(15,23,42,.9);
+}
+
+.featured-carousel__nav--prev{
+  left: -8px;
+}
+
+.featured-carousel__nav--next{
+  right: -8px;
+}
+
+.featured-carousel__dots{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.featured-carousel__dot{
+  width: 9px;
+  height: 9px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(15,23,42,.22);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.featured-carousel__dot.is-active{
+  width: 28px;
+  background: rgba(15,23,42,.78);
+}
+
+@media (max-width: 1200px){
+  .rail-card{
+    flex-basis: min(76vw, 420px);
   }
 
   .rail-card,
   .rail-card__body{
-    min-height: 480px;
+    min-height: 500px;
   }
 }
 
 @media (max-width: 768px){
   .featured-rail__head{
-    margin-bottom: 22px;
     text-align: left;
+    margin-bottom: 22px;
   }
 
-  .featured-rail .rail{
-    grid-auto-columns: 84%;
-    gap: 16px;
-    padding-inline: 2px;
+  .featured-carousel__nav{
+    display: none;
   }
 
-  .rail-card,
-  .rail-card__body{
+  .featured-carousel__viewport{
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .featured-carousel__viewport::-webkit-scrollbar{
+    display: none;
+  }
+
+  .featured-carousel__track{
+    transition: none;
+  }
+
+  .rail-card{
+    flex: 0 0 86%;
+    scroll-snap-align: start;
     min-height: 440px;
     border-radius: 22px;
   }
 
   .rail-card__body{
+    min-height: 440px;
     padding: 22px;
   }
 }
