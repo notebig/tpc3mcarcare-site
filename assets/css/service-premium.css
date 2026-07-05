@@ -597,6 +597,39 @@ h2 {
 }
 .spec-table td{ color:#333; }
 
+/* Price table (extends spec-table) */
+.table-scroll{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.table-scroll .price-table{
+  min-width:620px;
+}
+.price-table thead th{
+  background:#f8fafc;
+}
+.price-table th.price-col,
+.price-table td.price-col{
+  text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+.price-table td.price-col{
+  font-weight:600;
+  color:#111;
+}
+.price-table td.price-code{
+  font-weight:600;
+  color:#555;
+  white-space:nowrap;
+}
+.price-legend{
+  margin-top:16px;
+  font-size:14px;
+  color:#666;
+  line-height:1.7;
+}
+
 /* =========================================================
    IMAGE SYSTEM (GLOBAL) – FINAL
    - No duplicates

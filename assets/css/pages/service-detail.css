@@ -183,6 +183,31 @@ img {
   border-bottom: 0;
 }
 
+/* Price table (extends spec-table) */
+.price-table th.price-col,
+.price-table td.price-col {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.price-table td.price-col {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.price-table td.price-code {
+  font-weight: 600;
+  color: var(--color-text-soft);
+  white-space: nowrap;
+}
+
+.price-legend {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
 /* ---------- COMPARE GRID ---------- */
 
 .compare-grid {
