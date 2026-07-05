@@ -5,7 +5,8 @@
       "name": "static-site",
       "runtimeExecutable": "node",
       "runtimeArgs": [".claude/static-server.js"],
-      "port": 8090
+      "port": 8090,
+      "autoPort": true
     }
   ]
 }
