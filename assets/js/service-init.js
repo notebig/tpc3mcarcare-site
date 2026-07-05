@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-includeHTML('#header', '../../partials/header-services.html');
-includeHTML('#footer', '../../partials/footer-services.html');
-
   const reveals = document.querySelectorAll(".reveal");
 
   if(reveals.length){
