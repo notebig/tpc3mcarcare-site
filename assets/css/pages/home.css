@@ -1,4 +1,44 @@
 /* =========================================
+   SHARED TEXT / CTA (kept in sync with
+   pages/services.css and pages/service-detail.css)
+========================================= */
+
+.section-kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.lead {
+  font-size: 1.03rem;
+  line-height: 1.9;
+  color: var(--color-text-soft);
+}
+
+.final-cta {
+  background: var(--color-bg-dark);
+  color: #fff;
+  text-align: center;
+}
+
+.final-cta .section-kicker {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.final-cta h2 {
+  color: #fff;
+}
+
+.final-cta .lead {
+  max-width: 760px;
+  margin: 0 auto 22px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================
    FEATURED SERVICES CAROUSEL
    Final clean version
 ========================================= */
