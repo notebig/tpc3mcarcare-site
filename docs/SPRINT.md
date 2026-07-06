@@ -16,7 +16,6 @@ _(none remaining)_
 
 - [ ] Add a Testimonials/reviews section to the homepage — currently zero social proof beyond "since 2013"
 - [ ] Add a credibility number (cars served, repeat-customer rate, etc.)
-- [ ] Add a small embedded map to the homepage (currently only on the Contact page)
 - [ ] Add a skip-to-content link
 - [ ] Merge/minify the 5 separately-loaded CSS files
 - [ ] Make the 3 repeated CTA labels consistent across Hero / mid-page / final CTA
@@ -29,6 +28,7 @@ _(none remaining)_
 
 ## Done
 
+- [x] 2026-07-06 — Added a small embedded Google Maps iframe to the homepage CONTACT/LOCATION section (same real coordinates as the Contact page, compact 280px height, "เปิดใน Google Maps" link). Added `.home-map-wrap`/`.home-map-actions` to `pages/home.css`.
 - [x] 2026-07-06 — Added a CSS-only fallback so `.reveal` sections aren't permanently stuck at `opacity:0` if JS fails/is disabled: `animation-fill-mode:forwards` with a 2.5s delay guarantees visibility regardless of the JS-driven `IntersectionObserver`, added to both `components.css` and `service-premium.css` (covers all `.reveal` usage sitewide). Verified the fallback fires independent of the `.active` class.
 - [x] 2026-07-06 — (Correcting stale entries found during roadmap review) Confirmed already done earlier this session: Featured Carousel is built out with real content (4 slides, real photos, working nav) — not deleted; duplicate menu-control logic consolidated (`header.js` deleted, `include.js` is the sole implementation); header/footer FOUC fixed (preload hints added, unnecessary `DOMContentLoaded` gate removed); location cue ("ราชพฤกษ์") added as a visible eyebrow/kicker above the H1.
 - [x] 2026-07-06 — Added a favicon, sourced from the shop's real logo (car-outline icon, isolated from `theprochoice-logo3.png`, text removed, recoloured black + thickened for 16x16/32x32 legibility). Added to all 17 live pages; draft/template/knowledge/orphan pages intentionally excluded.
