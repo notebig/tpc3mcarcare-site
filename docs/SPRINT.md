@@ -20,7 +20,7 @@ _(none remaining)_
 ## Sitewide (not homepage-specific)
 
 - [ ] Audit and fix the placeholder-image problem beyond the homepage — 81 of 105 files under `assets/images/` are the same duplicate stock photo (ceramic, PPF, crystalline, defender, correction, film, wrap all affected)
-- [ ] Source pricing for Ceramic Coating tiers C1 (Boost), C2 (Boost Plus), C3 (Basic), CS (Deluxe Starter) — named in existing copy, no price sheet yet
+- [ ] **BLOCKED (needs owner input)** — Source pricing for Ceramic Coating tiers C1 (Boost), C2 (Boost Plus), C3 (Basic), CS (Deluxe Starter) — confirmed no pricing exists anywhere in the codebase or `3mtheproschoice-framework/referent/`; cannot fabricate per project rule against inventing business facts
 
 ## Done
 
