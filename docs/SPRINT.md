@@ -16,7 +16,6 @@ _(none remaining)_
 
 - [ ] Add a Testimonials/reviews section to the homepage — currently zero social proof beyond "since 2013"
 - [ ] Add a credibility number (cars served, repeat-customer rate, etc.)
-- [ ] Merge/minify the 5 separately-loaded CSS files
 - [ ] Make the 3 repeated CTA labels consistent across Hero / mid-page / final CTA
 
 ## Sitewide (not homepage-specific)
@@ -27,6 +26,7 @@ _(none remaining)_
 
 ## Done
 
+- [x] 2026-07-06 — Merged and minified the 4 shared CSS files (`tokens.css`+`core.css`+`layout.css`+`components.css`, 10,018 → 8,097 bytes) into one new `assets/css/bundle.min.css`, reducing 4 HTTP requests to 1 on the 13 live pages that used this stack (5 requests total → 2, alongside the page-specific stylesheet). Kept the original 4 files in place untouched since the orphaned `index2.html` still depends on them individually. `service-premium.css`-based pages (wrap-film/car-wash/paint-correction) already load a single file and were left alone. Verified visually across representative pages including a complex pricing table — no regression.
 - [x] 2026-07-06 — Added a skip-to-content link. One `<a href="#main-content" class="skip-link">` added to the shared `partials/header.html` (covers every page via the include mechanism), visually hidden until keyboard-focused (`core.css` + `service-premium.css`). Added `id="main-content"` to `<main>` on all 17 live pages. Verified visually and via keyboard Enter that it correctly jumps focus to page content.
 - [x] 2026-07-06 — Added a small embedded Google Maps iframe to the homepage CONTACT/LOCATION section (same real coordinates as the Contact page, compact 280px height, "เปิดใน Google Maps" link). Added `.home-map-wrap`/`.home-map-actions` to `pages/home.css`.
 - [x] 2026-07-06 — Added a CSS-only fallback so `.reveal` sections aren't permanently stuck at `opacity:0` if JS fails/is disabled: `animation-fill-mode:forwards` with a 2.5s delay guarantees visibility regardless of the JS-driven `IntersectionObserver`, added to both `components.css` and `service-premium.css` (covers all `.reveal` usage sitewide). Verified the fallback fires independent of the `.active` class.
