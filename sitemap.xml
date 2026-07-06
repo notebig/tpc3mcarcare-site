@@ -66,4 +66,44 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Services Hub -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Paint Protection Film -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/paint-protection-film/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Paint Correction -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/paint-correction/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Car Wash -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/car-wash/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Wrap Film -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/wrap-film/</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
