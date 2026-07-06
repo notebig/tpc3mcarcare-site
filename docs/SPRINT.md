@@ -1,5 +1,7 @@
 # Sprint Board
 
+**V1 development is complete (2026-07-06).** All remaining items below are Content Blockers — they need owner-supplied content/photos/pricing, not further development work — and are out of scope until that content is provided.
+
 Actionable backlog, ordered by priority. Move items to "Done" (with date) as they land — don't delete history, this doubles as a changelog.
 
 Source: Homepage 10-category audit (structure/duplicates/weak-missing sections/hierarchy/UX/conversion/performance/SEO/accessibility) plus open items from `PROJECT_STATUS.md`.
@@ -12,15 +14,12 @@ _(none remaining)_
 
 _(none remaining)_
 
-## P3 — Longer-term / growth
+## Content Blockers (owner-supplied content required — not development work)
 
-- [ ] Add a Testimonials/reviews section to the homepage — currently zero social proof beyond "since 2013"
-- [ ] Add a credibility number (cars served, repeat-customer rate, etc.)
-
-## Sitewide (not homepage-specific)
-
-- [ ] **BLOCKED (needs owner-supplied photos)** — Audit and fix the placeholder-image problem beyond the homepage. Confirmed 66 of 68 duplicate-placeholder images are live (12 pages: ceramic-coating, all 6 window-film sub-pages, defender-nano-ceramic, crystalline, car-wash, paint-correction, paint-protection-film, wrap-film, services hub). Not enough distinct real photos exist to fill highly-specific variant slots (e.g. crystalline CR20/CR40/CR70 tint-darkness variants, defender 05/15/35 film variants, ceramic IR05/IR15/IR25 day/night/family sets) without repeating or mismatching photos to products they don't depict. No partial rollout performed per explicit instruction — needs owner-supplied real photos per product/variant before implementation.
-- [ ] **BLOCKED (needs owner input)** — Source pricing for Ceramic Coating tiers C1 (Boost), C2 (Boost Plus), C3 (Basic), CS (Deluxe Starter) — confirmed no pricing exists anywhere in the codebase or `3mtheproschoice-framework/referent/`; cannot fabricate per project rule against inventing business facts
+- [ ] Add a Testimonials/reviews section to the homepage — needs real customer quotes
+- [ ] Add a credibility number (cars served, repeat-customer rate, etc.) — needs a real figure
+- [ ] Replace remaining sitewide duplicate-placeholder images (66 live slots across 12 pages: ceramic-coating, all 6 window-film sub-pages, defender-nano-ceramic, crystalline, car-wash, paint-correction, paint-protection-film, wrap-film, services hub) — needs real photos per specific product/variant (e.g. Crystalline CR20/CR40/CR70, Defender 05/15/35, Ceramic IR05/IR15/IR25 day/night/family sets)
+- [ ] Source pricing for Ceramic Coating tiers C1 (Boost), C2 (Boost Plus), C3 (Basic), CS (Deluxe Starter) — needs real prices
 
 ## Done
 
