@@ -6,7 +6,6 @@ Source: Homepage 10-category audit (structure/duplicates/weak-missing sections/h
 
 ## P1 — Highest impact (conversion, trust, or spreading technical debt)
 
-- [ ] Give PPF a real starting price on the homepage (currently the only service with no baht figure, next to 4 others that have one)
 - [ ] Add a favicon (none exists anywhere in the project)
 
 ## P2 — Page quality / technical debt
@@ -34,6 +33,7 @@ Source: Homepage 10-category audit (structure/duplicates/weak-missing sections/h
 
 ## Done
 
+- [x] 2026-07-06 — Gave homepage PPF a real starting price (฿8,900, entry-tier partial protection). Sourced from real 3M pricing reference material (`3mtheproschoice-framework/referent/`), not the full ฿8,900–139,900 range and not the Facebook promotional graphic (which showed different/discounted figures). Full tiering, sizing, MSRP, and current promotions intentionally stay off the homepage per business decision — see chat log for full marketing-strategy rationale.
 - [x] 2026-07-06 — Added a minimal `robots.txt` (allow all, sitemap reference)
 - [x] 2026-07-06 — Added the 5 missing pages to `sitemap.xml`: services hub, paint-protection-film, paint-correction, car-wash, wrap-film
 - [x] 2026-07-06 — Investigated Hero absolute-path compatibility (`url('/assets/...')`, used in 18 hero sections sitewide). Confirmed it breaks under local XAMPP subfolder hosting, but could not verify true production behavior — `tpc3mcarcare.com` is live but currently serves a different, older site build, meaning this codebase hasn't been deployed anywhere yet. Decision: left unchanged, no files modified. Revisit once the real deployment target (root domain vs. subfolder) is known.
