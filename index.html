@@ -54,6 +54,73 @@
       </div>
     </section>
 
+    <!-- FEATURED SERVICES CAROUSEL -->
+    <section class="section reveal">
+      <div class="container">
+        <div class="featured-rail__head">
+          <p class="section-kicker">จุดเริ่มต้นของคุณ</p>
+          <h2>ไม่ว่าจะเจอแบบไหน เรามีทางเริ่มให้คุณ</h2>
+          <p class="lead">
+            เริ่มจากสิ่งที่รถของคุณกำลังเจอ แล้วค่อยเลือกแนวทางดูแลที่เหมาะสม
+            ไม่จำเป็นต้องรู้จักชื่อบริการมาก่อน เราจะช่วยแนะนำให้ตรงกับการใช้งานจริง
+          </p>
+        </div>
+
+        <div class="featured-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="เลือกจุดเริ่มต้นตามสถานการณ์ของรถคุณ">
+          <div class="featured-carousel__viewport" data-carousel-viewport>
+            <div class="featured-carousel__track" data-carousel-track>
+
+              <article class="rail-card" data-carousel-slide aria-roledescription="slide" aria-label="1 จาก 4">
+                <img src="./assets/images/home/rail-window-film.webp" alt="กระจกรถที่ติดฟิล์มกรองแสง 3M ช่วยลดความร้อนและแสงสะท้อน" loading="lazy">
+                <div class="rail-card__body">
+                  <p class="rail-card__eyebrow">Window Film</p>
+                  <h3>รถร้อน ขับไม่สบาย?</h3>
+                  <p>ฟิล์มกรองแสงช่วยลดความร้อนและแสงสะท้อน ทำให้การขับขี่สบายขึ้นในทุกวัน</p>
+                  <a href="./services/window-film/index.html" class="rail-card__link">ดูบริการฟิล์มกรองแสง</a>
+                </div>
+              </article>
+
+              <article class="rail-card" data-carousel-slide aria-roledescription="slide" aria-label="2 จาก 4">
+                <img src="./assets/images/home/rail-ppf.webp" alt="ผิวรถที่ติดฟิล์มใสกันรอย PPF ป้องกันหินดีดและรอยขีดข่วน" loading="lazy">
+                <div class="rail-card__body">
+                  <p class="rail-card__eyebrow">Paint Protection Film</p>
+                  <h3>เพิ่งได้รถใหม่มา?</h3>
+                  <p>ปกป้องผิวสีตั้งแต่วันแรก ด้วยฟิล์มใสกันรอย เพื่อลดความเสี่ยงจากหินดีดและรอยขีดข่วนระหว่างการใช้งาน</p>
+                  <a href="./services/paint-protection-film/index.html" class="rail-card__link">ดูบริการฟิล์มใสกันรอย</a>
+                </div>
+              </article>
+
+              <article class="rail-card" data-carousel-slide aria-roledescription="slide" aria-label="3 จาก 4">
+                <img src="./assets/images/home/rail-correction.webp" alt="ผิวสีรถระหว่างขั้นตอนขัดฟื้นฟูให้เรียบเนียนไร้รอย" loading="lazy">
+                <div class="rail-card__body">
+                  <p class="rail-card__eyebrow">Surface Refinement</p>
+                  <h3>สีรถเริ่มมีรอย?</h3>
+                  <p>ฟื้นฟูผิวสีให้กลับมาเรียบเนียน ก่อนเข้าสู่การดูแลหรือการปกป้องในขั้นต่อไป</p>
+                  <a href="./services/paint-correction/index.html" class="rail-card__link">ดูบริการขัดสี</a>
+                </div>
+              </article>
+
+              <article class="rail-card" data-carousel-slide aria-roledescription="slide" aria-label="4 จาก 4">
+                <img src="./assets/images/home/rail-ceramic.webp" alt="ผิวรถหลังเคลือบเซรามิกที่เงางามและดูแลง่าย" loading="lazy">
+                <div class="rail-card__body">
+                  <p class="rail-card__eyebrow">Ceramic Coating</p>
+                  <h3>อยากให้รถดูแลง่ายไปอีกนาน?</h3>
+                  <p>เคลือบเซรามิกช่วยให้ล้างง่าย ลดการเกาะของคราบ และช่วยรักษาสภาพรถในระยะยาว</p>
+                  <a href="./services/ceramic-coating/index.html" class="rail-card__link">ดูบริการเคลือบเซรามิก</a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <button type="button" class="featured-carousel__nav featured-carousel__nav--prev" data-carousel-prev aria-label="สไลด์ก่อนหน้า">‹</button>
+          <button type="button" class="featured-carousel__nav featured-carousel__nav--next" data-carousel-next aria-label="สไลด์ถัดไป">›</button>
+
+          <div class="featured-carousel__dots" data-carousel-dots></div>
+        </div>
+      </div>
+    </section>
+
     <!-- TRUST BAR -->
     <section class="section reveal">
       <div class="container">
@@ -327,6 +394,20 @@
       }, { threshold: 0.15 });
 
       reveals.forEach((el) => observer.observe(el));
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const viewport = document.querySelector("[data-carousel-viewport]");
+      if (!viewport) return;
+
+      viewport.addEventListener("focusin", function (e) {
+        const slide = e.target.closest(".rail-card");
+        if (slide) {
+          slide.scrollIntoView({ behavior: "smooth", inline: "nearest", block: "nearest" });
+        }
+      });
     });
   </script>
 
