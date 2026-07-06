@@ -6,7 +6,6 @@ Source: Homepage 10-category audit (structure/duplicates/weak-missing sections/h
 
 ## P1 — Highest impact (conversion, trust, or spreading technical debt)
 
-- [ ] Add a `robots.txt`
 - [ ] Give PPF a real starting price on the homepage (currently the only service with no baht figure, next to 4 others that have one)
 - [ ] Add a favicon (none exists anywhere in the project)
 
@@ -35,6 +34,7 @@ Source: Homepage 10-category audit (structure/duplicates/weak-missing sections/h
 
 ## Done
 
+- [x] 2026-07-06 — Added a minimal `robots.txt` (allow all, sitemap reference)
 - [x] 2026-07-06 — Added the 5 missing pages to `sitemap.xml`: services hub, paint-protection-film, paint-correction, car-wash, wrap-film
 - [x] 2026-07-06 — Investigated Hero absolute-path compatibility (`url('/assets/...')`, used in 18 hero sections sitewide). Confirmed it breaks under local XAMPP subfolder hosting, but could not verify true production behavior — `tpc3mcarcare.com` is live but currently serves a different, older site build, meaning this codebase hasn't been deployed anywhere yet. Decision: left unchanged, no files modified. Revisit once the real deployment target (root domain vs. subfolder) is known.
 - [x] 2026-07-06 — Replaced the 13 duplicate placeholder images on the homepage (hero + 4 Car Care cards + 4 Protection cards + Car Wash/Paint Care/Interior/Surface Prep service cards) with real shop photos; preserved filenames and 2000×857 dimensions; `work-01/02/03.webp` left unchanged. 16/16 homepage images now unique.
