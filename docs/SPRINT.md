@@ -10,7 +10,7 @@ _(none remaining)_
 
 ## P2 — Page quality / technical debt
 
-- [ ] Add a fallback so `.reveal` sections aren't stuck at `opacity:0` if JS fails/is disabled
+_(none remaining)_
 
 ## P3 — Longer-term / growth
 
@@ -29,6 +29,7 @@ _(none remaining)_
 
 ## Done
 
+- [x] 2026-07-06 — Added a CSS-only fallback so `.reveal` sections aren't permanently stuck at `opacity:0` if JS fails/is disabled: `animation-fill-mode:forwards` with a 2.5s delay guarantees visibility regardless of the JS-driven `IntersectionObserver`, added to both `components.css` and `service-premium.css` (covers all `.reveal` usage sitewide). Verified the fallback fires independent of the `.active` class.
 - [x] 2026-07-06 — (Correcting stale entries found during roadmap review) Confirmed already done earlier this session: Featured Carousel is built out with real content (4 slides, real photos, working nav) — not deleted; duplicate menu-control logic consolidated (`header.js` deleted, `include.js` is the sole implementation); header/footer FOUC fixed (preload hints added, unnecessary `DOMContentLoaded` gate removed); location cue ("ราชพฤกษ์") added as a visible eyebrow/kicker above the H1.
 - [x] 2026-07-06 — Added a favicon, sourced from the shop's real logo (car-outline icon, isolated from `theprochoice-logo3.png`, text removed, recoloured black + thickened for 16x16/32x32 legibility). Added to all 17 live pages; draft/template/knowledge/orphan pages intentionally excluded.
 - [x] 2026-07-06 — Gave homepage PPF a real starting price (฿8,900, entry-tier partial protection). Sourced from real 3M pricing reference material (`3mtheproschoice-framework/referent/`), not the full ฿8,900–139,900 range and not the Facebook promotional graphic (which showed different/discounted figures). Full tiering, sizing, MSRP, and current promotions intentionally stay off the homepage per business decision — see chat log for full marketing-strategy rationale.

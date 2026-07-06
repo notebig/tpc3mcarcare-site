@@ -66,11 +66,16 @@
   opacity:0;
   transform:translateY(40px);
   transition:all .6s ease;
+  animation:reveal-fallback 0.3s 2.5s forwards;
 }
 
 .reveal.active{
   opacity:1;
   transform:none;
+}
+
+@keyframes reveal-fallback{
+  to{ opacity:1; transform:none; }
 }
 
 /* BREADCRUMB */
