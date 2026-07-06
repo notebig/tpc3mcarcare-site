@@ -19,7 +19,7 @@ _(none remaining)_
 
 ## Sitewide (not homepage-specific)
 
-- [ ] Audit and fix the placeholder-image problem beyond the homepage — 81 of 105 files under `assets/images/` are the same duplicate stock photo (ceramic, PPF, crystalline, defender, correction, film, wrap all affected)
+- [ ] **BLOCKED (needs owner-supplied photos)** — Audit and fix the placeholder-image problem beyond the homepage. Confirmed 66 of 68 duplicate-placeholder images are live (12 pages: ceramic-coating, all 6 window-film sub-pages, defender-nano-ceramic, crystalline, car-wash, paint-correction, paint-protection-film, wrap-film, services hub). Not enough distinct real photos exist to fill highly-specific variant slots (e.g. crystalline CR20/CR40/CR70 tint-darkness variants, defender 05/15/35 film variants, ceramic IR05/IR15/IR25 day/night/family sets) without repeating or mismatching photos to products they don't depict. No partial rollout performed per explicit instruction — needs owner-supplied real photos per product/variant before implementation.
 - [ ] **BLOCKED (needs owner input)** — Source pricing for Ceramic Coating tiers C1 (Boost), C2 (Boost Plus), C3 (Basic), CS (Deluxe Starter) — confirmed no pricing exists anywhere in the codebase or `3mtheproschoice-framework/referent/`; cannot fabricate per project rule against inventing business facts
 
 ## Done
