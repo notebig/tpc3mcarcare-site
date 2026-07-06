@@ -268,11 +268,10 @@
     initFooterSystem();
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initIncludes);
-  } else {
-    initIncludes();
-  }
+  // #header/#footer already exist in the DOM by the time this script runs
+  // (the script tag is placed after them in every page), so no need to
+  // wait for DOMContentLoaded before fetching the partials.
+  initIncludes();
 
   // Optional debug access
   window.TPCInclude = {
