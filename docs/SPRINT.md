@@ -6,7 +6,6 @@ Source: Homepage 10-category audit (structure/duplicates/weak-missing sections/h
 
 ## P1 — Highest impact (conversion, trust, or spreading technical debt)
 
-- [ ] Investigate Hero absolute-path compatibility — `index.html`'s hero background uses `url('/assets/images/home/home-hero.webp')` (absolute path). Verify production behavior, verify subfolder-hosting compatibility, decide whether to convert to a relative path.
 - [ ] Add the 5 missing pages to `sitemap.xml`: `services/index.html`, `paint-protection-film`, `paint-correction`, `car-wash`, `wrap-film`
 - [ ] Add a `robots.txt`
 - [ ] Give PPF a real starting price on the homepage (currently the only service with no baht figure, next to 4 others that have one)
@@ -37,6 +36,7 @@ Source: Homepage 10-category audit (structure/duplicates/weak-missing sections/h
 
 ## Done
 
+- [x] 2026-07-06 — Investigated Hero absolute-path compatibility (`url('/assets/...')`, used in 18 hero sections sitewide). Confirmed it breaks under local XAMPP subfolder hosting, but could not verify true production behavior — `tpc3mcarcare.com` is live but currently serves a different, older site build, meaning this codebase hasn't been deployed anywhere yet. Decision: left unchanged, no files modified. Revisit once the real deployment target (root domain vs. subfolder) is known.
 - [x] 2026-07-06 — Replaced the 13 duplicate placeholder images on the homepage (hero + 4 Car Care cards + 4 Protection cards + Car Wash/Paint Care/Interior/Surface Prep service cards) with real shop photos; preserved filenames and 2000×857 dimensions; `work-01/02/03.webp` left unchanged. 16/16 homepage images now unique.
 - [x] 2026-07-06 — Rebuilt `contact/index.html`: real phone/LINE/Facebook links, Google Maps embed, nearby-amenities section, added missing page CSS
 - [x] 2026-07-06 — Car Wash page: added Wash (B1–BX), Paint Care/Wax (W1–W3), Add-on (E1–E8) pricing tables; fixed mobile horizontal-overflow bug from the new tables
