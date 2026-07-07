@@ -106,4 +106,36 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- 3M Ceramic IR05 -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/window-film/3m-cm-ir05.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 3M Ceramic IR15 -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/window-film/3m-cm-ir15.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 3M Ceramic IR25 -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/window-film/3m-cm-ir25.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Protection Add-ons -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/protection-addons/</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
