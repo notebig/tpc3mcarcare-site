@@ -78,3 +78,21 @@ Two decisions were deliberately left flexible rather than automatic: sitemap inc
 **Why:** Keeps the current architecture's real strengths (flat nav, no dropdown infra needed, stable URLs) while fixing gaps found under review: sitemap missing legitimate Level-3 pages (IR05/15/25), no plan for discontinued/renamed products, and campaigns/promotions having nowhere to live without polluting the permanent tree. Deferred: consolidating the two parallel CSS systems (`tokens/core/layout/components` bundle vs `service-premium.css`) into one — real maintenance cost, but not urgent enough to block this architecture approval.
 
 **Status:** Architecture only — no files changed. Implementing Crystalline Black / Graphene Shine Coating pages still blocked on real specs, warranty terms, VLT/IR rejection figures, and pricing from the owner.
+
+---
+
+### 2026-07-07 — Font/logo brand-asset evaluation: use logos selectively, don't adopt 3M's typeface
+
+**Context:** The owner's reference material includes official 3M assets: the `3M CIRCULAR TRUETYPE` font family (8 weights/styles) and several real logo/lockup files, including one (`crystalline-master-logo-.png`) that's a co-branded lockup of the shop's own "3M Car Care The Pro's Choice" mark next to the official "Crystalline" product logo. Evaluated whether to adopt either into the site.
+
+**Decision:** Recommend using the official product logo marks (Crystalline, Ceramic Coating, PPF) as small trust badges on their respective service pages — but do NOT adopt the 3M Circular typeface sitewide. Neither is implemented yet; this is analysis only, pending owner approval.
+
+**Why against the font:**
+- 3M Circular is a Latin-only display face — it wouldn't touch any Thai body copy, which is the vast majority of this site's text. The visual impact would be limited to English headings/eyebrows.
+- It's 3M's own proprietary corporate typeface. Whether an authorized reseller is licensed to embed it on their own public website (versus using it only in 3M-supplied print/marketing templates) is a brand-usage question the owner would need to confirm with 3M, not something to guess at.
+- Real performance cost: 8 raw TTF files (not web-optimized woff2) would need subsetting and a `@font-face` strategy to avoid a page-weight regression, on a site that currently ships zero custom webfonts.
+- Highest possible blast radius — touches typography on every one of the 17+ live pages — for a purely cosmetic gain, while known conversion-blocking gaps (real photos, testimonials) remain unaddressed. Not worth prioritizing ahead of that.
+
+**Why for the logos:** Displaying a product's own official 3M logo mark next to that product's page is standard authorized-dealer practice (the shop already does this physically in-store — visible in several reference photos). Low blast radius (a handful of small badge placements, not a redesign) and reinforces authenticity precisely where it's most relevant (Crystalline, Ceramic Coating, PPF pages).
+
+**Status:** Recommendation only — no CSS or HTML changed. Needs owner sign-off before implementing the logo badges; typeface adoption is not recommended for now.
