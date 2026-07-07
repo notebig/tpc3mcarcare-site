@@ -247,7 +247,6 @@
 .featured-carousel__track{
   display: flex;
   gap: 20px;
-  width: max-content;
 }
 
 .rail-card{
