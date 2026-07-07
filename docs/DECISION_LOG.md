@@ -61,3 +61,20 @@ Record of non-obvious decisions and why they were made, so future work doesn't r
 **Decision:** Delivered both as reports/analysis only — no file changes — even though several items overlap with fixes already known to be needed (e.g., duplicate images).
 
 **Why:** Explicitly requested as review-only. Findings were captured in `SPRINT.md` so they aren't lost, but implementation waits for an explicit go-ahead per item.
+
+---
+
+### 2026-07-06 — Approved long-term product architecture (V3), analysis only
+
+**Context:** Business plans to keep launching new 3M products (first two: 3M Crystalline Black, 3M Graphene Shine Coating) over the next 3–5 years. Needed a scalable hierarchy that doesn't require redesigning nav or URLs each time.
+
+**Decision:** Approved a 3-level **Family → Line → Variant** product tree. Family (6 services) stays frozen and mapped to the flat nav forever — all growth happens at Line/Variant level via internal links only, never via nav. New pages get full descriptive URL slugs (no abbreviations); existing 17 live URLs are never renamed or moved (no redirect mechanism exists on this static host). Added a **Content Architecture** layer alongside the product tree:
+- **Nested in product pages:** Reviews (hand-curated component, no CMS exists so nothing can be user-submitted live)
+- **Parallel trees:** `knowledge/{slug}.html` (education + comparison pages, allowed to cross-link between Families) and `case-studies/{slug}.html` (portfolio/proof content, distinct intent from Knowledge)
+- **Ephemeral, not tree nodes:** Campaigns (homepage banner slot) and Promotions (one reused `/promotions/index.html`) — deliberately NOT permanent pages, since a static site with no CMS would otherwise accumulate dead seasonal pages indefinitely
+
+Two decisions were deliberately left flexible rather than automatic: sitemap inclusion for Variant pages is judged per-page by real search intent/content uniqueness (not "always include Level 3"), and `Product` schema adoption is a standalone strategic decision revisited periodically, not a mandatory step in every product launch.
+
+**Why:** Keeps the current architecture's real strengths (flat nav, no dropdown infra needed, stable URLs) while fixing gaps found under review: sitemap missing legitimate Level-3 pages (IR05/15/25), no plan for discontinued/renamed products, and campaigns/promotions having nowhere to live without polluting the permanent tree. Deferred: consolidating the two parallel CSS systems (`tokens/core/layout/components` bundle vs `service-premium.css`) into one — real maintenance cost, but not urgent enough to block this architecture approval.
+
+**Status:** Architecture only — no files changed. Implementing Crystalline Black / Graphene Shine Coating pages still blocked on real specs, warranty terms, VLT/IR rejection figures, and pricing from the owner.
