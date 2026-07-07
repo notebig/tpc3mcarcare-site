@@ -1,18 +1,34 @@
 # Sprint Board
 
-**V1 development is complete (2026-07-06).** All remaining items below are Content Blockers — they need owner-supplied content/photos/pricing, not further development work — and are out of scope until that content is provided.
+**V1 development (feature-complete) is done (2026-07-06).** A separate **V1 Launch Readiness** audit (2026-07-07) found additional SEO/accessibility/metadata gaps not caught by the original feature roadmap — tracked below as P0/P1/P2. Architecture V3 (Family → Line → Variant product tree) is approved and recorded in `docs/DECISION_LOG.md`; Crystalline Black / Graphene Shine implementation is blocked pending official specs.
 
 Actionable backlog, ordered by priority. Move items to "Done" (with date) as they land — don't delete history, this doubles as a changelog.
 
-Source: Homepage 10-category audit (structure/duplicates/weak-missing sections/hierarchy/UX/conversion/performance/SEO/accessibility) plus open items from `PROJECT_STATUS.md`.
+Source: Homepage 10-category audit (structure/duplicates/weak-missing sections/hierarchy/UX/conversion/performance/SEO/accessibility) plus open items from `PROJECT_STATUS.md`, plus the 2026-07-07 V1 Launch Readiness sitewide technical audit.
 
-## P1 — Highest impact (conversion, trust, or spreading technical debt)
+## V1 Launch Readiness — P0 (must complete before launch)
 
-_(none remaining)_
+- [ ] **BLOCKED — waiting for production canonical hostname decision.** Fix www vs non-www inconsistency (13 canonical tags use www, 2 use non-www, 2 pages have no canonical at all; robots.txt + sitemap.xml both non-www). Checked DNS/HTTP: both `tpc3mcarcare.com` and `www.tpc3mcarcare.com` resolve to the same IP, return identical 200 responses, no redirect either direction, and both currently serve an unrelated older site (not this codebase) — no evidence anywhere in the repo or deployment config indicates the intended production hostname. Cannot proceed without an explicit decision.
+- [ ] Add missing canonical tags to `services/ceramic-coating/special-care.html` and `services/window-film/defender-nano-ceramic.html` (currently have none) — analysis in progress
+- [ ] Add missing `alt` attributes to 3 images in `services/window-film/defender-nano-ceramic.html` (defender-05/15/35.webp)
+- [ ] Create a custom 404 error page
+- [ ] Add missing `<meta name="description">` to `services/ceramic-coating/special-care.html`
+- [ ] Fix broken JSON-LD image reference in `contact/index.html` (`store-front.jpg` does not exist on disk) — tracked as its own P0 item, not bundled with the canonical-domain fix
 
-## P2 — Page quality / technical debt
+## V1 Launch Readiness — P1 (strongly recommended before launch)
 
-_(none remaining)_
+- [ ] Add Open Graph / Twitter Card tags to the 13 pages missing them
+- [ ] Add Service schema (JSON-LD) to the 12 pages missing it, especially `services/index.html`
+- [ ] Shorten 5 overly-long `<title>` tags and lengthen 2 short `<meta description>` tags
+- [ ] Add `services/window-film/3m-cm-ir05.html`, `3m-cm-ir15.html`, `3m-cm-ir25.html` to `sitemap.xml` (real distinct search intent per Architecture V3's sitemap rule)
+- [ ] Cross-browser check beyond Chrome (Safari/Firefox) — all verification this session has been Chrome-only
+
+## V1 Launch Readiness — P2 (nice to have after launch)
+
+- [ ] Decide whether `services/ceramic-coating/special-care.html` belongs in `sitemap.xml` (weaker search-intent case than the IR pages)
+- [ ] Clean up unused `assets/images/library/` (27 files >500KB, none referenced by any live page — doesn't affect live performance, just repo bloat)
+- [ ] Confirm with owner whether a real contact form is wanted (site currently uses tel:/LINE only, no `<form>` anywhere — may be intentional)
+- [ ] Full systematic CTA audit across all 17 pages (spot-checks so far show consistency already)
 
 ## Content Blockers (owner-supplied content required — not development work)
 
