@@ -318,13 +318,20 @@ html[data-menu="open"] .mnav{ transform: translateX(0); }
   content: "";
   position: absolute;
   inset: 0;
-  background-image: var(--hero-bg);
+  background-color: #0a1018;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   animation: heroScale 18s ease-in-out infinite alternate;
   z-index: 0;
 }
+
+/* Hero images set per-page via body id, path relative to this stylesheet
+   (not the page) so it resolves correctly whether the site is served from
+   a domain root or a subfolder. */
+#page-car-wash .hero::before { background-image: url('../images/carwash-hero.webp'); }
+#page-paint-correction .hero::before { background-image: url('../images/correction-hero.webp'); }
+#page-wrap-film .hero::before { background-image: url('../images/wrap-hero.webp'); }
 
 .hero::after {
   content: "";

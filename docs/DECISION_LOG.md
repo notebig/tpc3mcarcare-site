@@ -120,3 +120,15 @@ Two decisions were deliberately left flexible rather than automatic: sitemap inc
 **Why:** Root-cause fix beats a per-path patch — this bug affected literally every hero on the site, and would have resurfaced on every future page built from these templates if left as relative-path custom properties. Inline `background` is the correct, spec-predictable choice for the 16 pages where it's possible at all; absolute paths remain the only option for the pseudo-element-based animated heroes.
 
 **Status:** Implemented and verified live (screenshot + computed `backgroundImage` inspection) for the 16 inline-fixed pages. The 3 pseudo-element pages are correctly using absolute paths but can't be visually confirmed until the site is deployed at its real domain root.
+
+---
+
+### 2026-07-08 — Hero images on car-wash/paint-correction/wrap-film now work locally too, no more absolute-path tradeoff
+
+**Context:** User confirmed the 3 pseudo-element pages (car-wash, paint-correction, wrap-film) still showed no hero photo under local XAMPP testing — the expected, already-documented consequence of the absolute-path fix above.
+
+**Decision:** Replaced the absolute-path `--hero-bg` custom property with per-page CSS rules directly in `service-premium.css`, keyed by a unique `id` added to each page's `<body>` (`page-car-wash`, `page-paint-correction`, `page-wrap-film`), using a path relative to the stylesheet's own location (`../images/x.webp`). A relative path from the CSS file always resolves the same way regardless of whether the site is served from a domain root or a subfolder, since it's anchored to the stylesheet's fixed location, not the page's. This removes the local/production asymmetry entirely — no more caveat needed.
+
+**Why:** The custom-property/pseudo-element constraint (from the earlier entry) still applies — `::before` can't take an inline style — but scoping by body `id` in the external stylesheet gets the same "resolve relative to a fixed, known location" benefit that inline styles gave the other 16 pages, without needing inline styles at all.
+
+**Status:** Implemented and verified live on all 3 pages (computed `backgroundImage` + image HEAD request + screenshot, after confirming a stale cached copy of `service-premium.css` in the test browser — not the fix itself — was the reason for an initial "still blank" false alarm).
