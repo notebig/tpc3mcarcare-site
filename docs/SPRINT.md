@@ -35,6 +35,7 @@ Owner supplied `3m_carcare_basic_product_service_audit.xlsx` — a sitewide audi
 - [ ] Add a Testimonials/reviews section to the homepage — needs real customer quotes
 - [ ] Add a credibility number (cars served, repeat-customer rate, etc.) — needs a real figure
 - [ ] Remaining 10 duplicate-placeholder image slots with no matching real material yet: `defender-05/15/35/break/hero.webp` + `film-defender.webp` (Defender isn't a 3M product, so no source photos exist in the owner's 3M reference material — needs owner-supplied Defender photos specifically), `crystalline-cr40.webp` + `crystalline-cr70.webp` (owner's reference folder only had shade-labeled photos for CR20, not CR40/CR70 — using an unlabeled photo would risk misrepresenting which shade it shows), `ceramic-ir15-night.webp` + `ceramic-ir25-night.webp` (no nighttime photography exists in the reference material)
+- [ ] `3m-crystalline.html` CR50 shade card (added 2026-07-09) is using the hero photo as a placeholder — owner said a real CR50 install photo will follow, needs swapping in when supplied
 
 ## Done
 
