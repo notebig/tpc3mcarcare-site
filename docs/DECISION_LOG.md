@@ -96,3 +96,15 @@ Two decisions were deliberately left flexible rather than automatic: sitemap inc
 **Why for the logos:** Displaying a product's own official 3M logo mark next to that product's page is standard authorized-dealer practice (the shop already does this physically in-store — visible in several reference photos). Low blast radius (a handful of small badge placements, not a redesign) and reinforces authenticity precisely where it's most relevant (Crystalline, Ceramic Coating, PPF pages).
 
 **Status:** Recommendation only — no CSS or HTML changed. Needs owner sign-off before implementing the logo badges; typeface adoption is not recommended for now.
+
+---
+
+### 2026-07-08 — Resolved P0#1: production canonical domain is `tpc3mcarcare.com` (non-www)
+
+**Context:** P0#1 had been explicitly marked BLOCKED (2026-07-07) after DNS/HTTP investigation found both `tpc3mcarcare.com` and `www.tpc3mcarcare.com` resolving identically, with no evidence in the repo or deployment config indicating the intended hostname — the owner was asked to make the call rather than have it guessed.
+
+**Decision:** The owner supplied a local copy of the actual current live production site's source (`/Applications/XAMPP/xamppfiles/htdocs/tpc3mcarcare/`, a completely separate, older codebase from this repo). That real site's own canonical tag, og:url, og:image, twitter:image, hreflang alternate, and JSON-LD (url/image/logo) all consistently use `https://tpc3mcarcare.com` — non-www — with zero www references anywhere in the file. Adopted non-www as the confirmed production domain and updated all 13 files in this repo that still had www-form canonical/OG/JSON-LD references to match (domain form only, no path changes). This also matches `robots.txt`/`sitemap.xml`, which were already non-www.
+
+**Why:** First-party evidence from the actual live site is decisive — stronger than the inconclusive DNS/HTTP behavior that blocked this originally. No guessing was involved; the owner directly pointed to the source of truth.
+
+**Status:** Implemented. `services/ceramic-coating/special-care.html` and `services/window-film/defender-nano-ceramic.html` still need a canonical tag added (previously blocked by P0#1, now unblocked, but adding a *new* tag was out of scope for this domain-form-only fix batch — tracked as a separate small P0 item in `docs/SPRINT.md`).
