@@ -42,6 +42,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- 3M Crystalline Black -->
+  <url>
+    <loc>https://tpc3mcarcare.com/services/window-film/3m-crystalline-black.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- 3M Crystalline -->
   <url>
     <loc>https://tpc3mcarcare.com/services/window-film/3m-crystalline.html</loc>
