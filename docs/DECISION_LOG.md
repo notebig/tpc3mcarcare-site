@@ -107,4 +107,4 @@ Two decisions were deliberately left flexible rather than automatic: sitemap inc
 
 **Why:** First-party evidence from the actual live site is decisive — stronger than the inconclusive DNS/HTTP behavior that blocked this originally. No guessing was involved; the owner directly pointed to the source of truth.
 
-**Status:** Implemented. `services/ceramic-coating/special-care.html` and `services/window-film/defender-nano-ceramic.html` still need a canonical tag added (previously blocked by P0#1, now unblocked, but adding a *new* tag was out of scope for this domain-form-only fix batch — tracked as a separate small P0 item in `docs/SPRINT.md`).
+**Status:** Implemented. `services/ceramic-coating/special-care.html` and `services/window-film/defender-nano-ceramic.html` have since had their canonical tags added too (2026-07-08, same day) — the V1 Launch Readiness P0 list is now fully closed.
