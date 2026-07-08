@@ -148,6 +148,10 @@ img {
   -webkit-overflow-scrolling: touch;
 }
 
+.table-scroll .price-table {
+  min-width: 1100px;
+}
+
 .spec-table {
   width: 100%;
   border-collapse: collapse;
@@ -188,6 +192,7 @@ img {
 .price-table td.price-col {
   text-align: right;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .price-table td.price-col {
