@@ -6,6 +6,14 @@ Actionable backlog, ordered by priority. Move items to "Done" (with date) as the
 
 Source: Homepage 10-category audit (structure/duplicates/weak-missing sections/hierarchy/UX/conversion/performance/SEO/accessibility) plus open items from `PROJECT_STATUS.md`, plus the 2026-07-07 V1 Launch Readiness sitewide technical audit.
 
+## Content Messaging Audit (2026-07-09, ongoing)
+
+Owner supplied `3m_carcare_basic_product_service_audit.xlsx` — a sitewide audit of what each product/service page's copy is actually communicating vs. what it should communicate, based on the owner's real positioning knowledge. 31 pages, 2,268 text items scanned, 768 product/service mentions flagged, of which 13 are P0 (miscommunication risk) and 52 are P1 (should fix/complete). Rolling out product-by-product, highest-impact first, draft copy approved before each edit.
+
+- **P0 total: 13/13 done (2026-07-09).** Crystalline / Crystalline Black (12 points across `3m-crystalline.html` + `3m-crystalline-black.html`): repositioned away from "ความเข้ม/ความเป็นส่วนตัว" (tint darkness/privacy) as the lead sell, toward the real differentiator — Multi-layer Optical Film heat-reduction technology, image staying bright/clear, without needing a darker tint. Added an owner-supplied field detail (glass surface reflects red when wet — a genuine Multi-layer Optical Film trait) as a low-key `.micro-note` on both pages rather than a promotional feature card, matching how the owner actually mentions it to customers in person. The 13th P0 item (Ceramic Coating micro-note) needed no edit — already correctly worded.
+- **P1 remaining: 52/52 not started.** Next up: 3M Ceramic Ultra Clear (11 points, 5 pages — add "still a heat-reducing ceramic film, not just a clear film" context), then Wrap Film (2 points — separate from PPF messaging), then PPF (39 points, 12 pages — **blocked on confirming with the owner whether Self-healing/Top coat properties are real for the PPF line sold**, since the audit itself flags that claim as conditional on verification).
+- Progress: 12/65 total items done (18%). ETA depends on approval turnaround per batch, no fixed date.
+
 ## V1 Launch Readiness — P0 (must complete before launch)
 
 *(none remaining — all V1 Launch Readiness P0 items are done)*
