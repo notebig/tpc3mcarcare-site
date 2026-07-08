@@ -604,6 +604,7 @@ h2 {
 
 .spec-table{
   width:100%;
+  min-width:max-content;
   border-collapse:collapse;
   margin:40px 0;
   font-size:16px;
