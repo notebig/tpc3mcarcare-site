@@ -11,9 +11,10 @@
   display: grid;
   place-items: center;
   padding: 120px 24px 80px;
-  background:
-    linear-gradient(180deg, rgba(10, 16, 24, 0.42), rgba(10, 16, 24, 0.58)),
-    var(--hero-bg) center / cover no-repeat;
+  /* background-image is set inline per-page (see HTML), not here — url() inside a
+     custom property resolves relative to the stylesheet it's substituted into, not
+     the page that declared it, which broke every hero image sitewide. */
+  background-color: #0a1018;
   color: #fff;
 }
 
