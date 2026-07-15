@@ -43,6 +43,21 @@
 .hdr__brandMark{ font-weight: 800; }
 .hdr__brandName{ font-weight: 650; letter-spacing: .2px; }
 
+/* Logo lockup — swaps light/dark automatically with the existing
+   data-theme state set by include.js on scroll */
+.hdr__brand{ align-items: center; }
+
+.hdr__logo{
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+.hdr__logo--light{ display: none; }
+
+.hdr[data-theme="solid"] .hdr__logo--dark{ display: none; }
+.hdr[data-theme="solid"] .hdr__logo--light{ display: block; }
+
 .hdr__nav{
   display: none;
   gap: 28px;
@@ -241,6 +256,13 @@ html[data-menu="open"] .mnav{ transform: translateX(0); }
   font-size:28px;
   font-weight:600;
   color:#fff;
+  margin-bottom:14px;
+}
+
+.footer-logo-img{
+  height:38px;
+  width:auto;
+  display:block;
 }
 
 .footer-tagline{
@@ -324,6 +346,20 @@ html[data-menu="open"] .mnav{ transform: translateX(0); }
 
 @media(min-width:1024px){
   .lux-contact-bar{ display:none; }
+}
+
+/* ================= SERVICE HERO PRODUCT LOGO ================= */
+/* Small product wordmark shown above the eyebrow label on service
+   hero sections. Hero sections always sit on a dark photo overlay,
+   so this always uses the white (_dark suffix) logo variant. */
+.hero-logo{
+  height: 34px;
+  width: auto;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 768px){
+  .hero-logo{ height: 42px; }
 }
 
 @media(max-width:1023px){

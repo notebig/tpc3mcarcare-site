@@ -1,1 +1,5 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.tpc3mcarcare\.com [NC]
+RewriteRule ^(.*)$ https://tpc3mcarcare.com/$1 [L,R=301]
+
 ErrorDocument 404 /404.html

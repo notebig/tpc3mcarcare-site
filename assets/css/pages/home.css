@@ -186,6 +186,12 @@
   line-height: 1.85;
 }
 
+.choice-item__icon {
+  height: 32px;
+  width: auto;
+  margin-bottom: 12px;
+}
+
 @media (max-width: 1100px) {
   .compare-grid {
     grid-template-columns: 1fr;

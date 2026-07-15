@@ -59,6 +59,15 @@ img {
   margin-bottom: 8px;
 }
 
+/* Small 3M product-family lockup shown above a section-kicker to brand
+   a whole comparison/section block (as opposed to .hero-logo, which
+   brands an individual hero). */
+.section-logo {
+  height: 28px;
+  width: auto;
+  margin-bottom: 14px;
+}
+
 .hero--service h1 {
   margin: 14px 0 18px;
   font-size: clamp(2.2rem, 4.8vw, 4.2rem);
@@ -252,6 +261,18 @@ img {
   line-height: 1.3;
 }
 
+/* Small product wordmark badge shown between the photo and the title
+   on a compare-item card. Overrides the generic ".compare-item img"
+   photo-crop treatment (16:10 cover) since a logo must never be cropped. */
+.compare-item .compare-item__icon {
+  width: auto;
+  height: 22px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  display: block;
+  margin: 20px 22px 0;
+}
+
 .compare-item p {
   margin: 0 22px 18px;
   color: var(--color-text-soft);
@@ -291,6 +312,12 @@ img {
   line-height: 1.85;
 }
 
+.choice-item__icon {
+  height: 32px;
+  width: auto;
+  margin-bottom: 12px;
+}
+
 /* ---------- WORKFLOW SAFETY ---------- */
 
 .workflow-timeline {
@@ -325,6 +352,7 @@ img {
   color: rgba(255, 255, 255, 0.62);
 }
 
+.final-cta h1,
 .final-cta h2 {
   color: #fff;
 }

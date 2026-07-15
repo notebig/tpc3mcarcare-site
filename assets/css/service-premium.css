@@ -81,6 +81,11 @@ img {
 .hdr__brandMark{ font-weight: 800; }
 .hdr__brandName{ font-weight: 650; letter-spacing: .2px; }
 
+.hdr__logo{ height: 30px; width: auto; display: block; }
+.hdr__logo--light{ display: none; }
+.hdr[data-theme="solid"] .hdr__logo--dark{ display: none; }
+.hdr[data-theme="solid"] .hdr__logo--light{ display: block; }
+
 .hdr__nav{
   display: none;
   gap: 36px;

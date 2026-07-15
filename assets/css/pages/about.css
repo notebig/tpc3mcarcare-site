@@ -1,0 +1,89 @@
+/* =========================================================
+   TPC 3M CAR CARE – about.css
+   About Us Page
+   ========================================================= */
+
+.section {
+  padding: 88px 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container.narrow {
+  max-width: 760px;
+}
+
+.section-alt {
+  background: var(--color-bg-soft);
+}
+
+.section-kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.lead {
+  font-size: 1.03rem;
+  line-height: 1.9;
+  color: var(--color-text-soft);
+}
+
+/* ---------- HERO / INTRO ---------- */
+
+.about-hero {
+  padding-top: 140px;
+  text-align: center;
+  background: var(--color-bg-soft);
+}
+
+.about-hero h1 {
+  margin: 10px 0 18px;
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+/* ---------- QUICK LINKS (reused pattern from contact page) ---------- */
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.quick-links-grid a {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  color: var(--color-text);
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.quick-links-grid a:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .about-hero {
+    padding-top: 110px;
+  }
+}
